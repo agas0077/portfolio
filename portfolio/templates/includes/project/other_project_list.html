@@ -2,7 +2,7 @@
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Other Projects</h2>
         <div class="content">
-            {% for project in other_projects %}
+            {% for project in user.other_projects %}
                 <div class="item">
                     <h3 class="title"><a href={{ project.github_link }} target="_blank">{{ project.title }}</a></h3>
                     <p class="summary">{{ project.description }}</p>

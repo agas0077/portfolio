@@ -2,7 +2,7 @@
 <!DOCTYPE HTML5>
 <html lang="en">
       <head>
-            <title>Bootstrap Portfolio/Resume Theme for Developers</title>
+            <title>{{ user.name }} {{user.surname}} Protfolio</title>
             <!-- Meta -->
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,10 +39,8 @@
             {% include "includes/header.html" %}
             <div class="container sections-wrapper py-5">
                   <div class="row">
-                        <div class="primary col-lg-8 col-12">
-                              {% block content %}
-                              {% endblock content %}
-                        </div>
+                        {% block content %}
+                        {% endblock content %}
                   </div>
             </div>
             {% include "includes/footer.html" %}
