@@ -1,0 +1,65 @@
+{% load static %}
+{% load thumbnail %}
+<section class="latest section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Latest Projects</h2>
+        <div class="content">
+            {% for project in user.projects.all %}
+                {% if projects.first %}
+                    <div class="item featured text-center">
+                        <div class="featured-image has-ribbon">
+                            <a href={{ project.online_link }} target="_blank">
+                                {% thumbnail project.image "636x270" crop="center" upscale=False quality=100 as im %}
+                                    <img class="img-fluid project-image rounded shadow-sm"
+                                        src={{ im.url }}
+                                        alt={{ project.title }} />
+                                {% endthumbnail %}
+                            </a>
+                            <div class="ribbon">
+                                <div class="text">New</div>
+                            </div>
+                        </div>
+                        <h3 class="title mb-3">
+                            <a href={{ project.online_link }} target="_blank">{{ project.title }}</a>
+                        </h3>
+                        <div class="desc text-start">
+                            <p>{{ project.description }}</p>
+                        </div>
+                        <!--//desc-->
+                        <a class="btn btn-cta-secondary me-3" href={{ project.github_link }} target="_blank"><i class="fas fa-thumbs-up"></i>Source code</a>
+                        <a class="btn btn-cta-secondary" href={{ project.online_link }} target="_blank"><i class="fas fa-thumbs-up"></i>View online</a>
+                    </div>
+                {% else %}
+                    <hr class="divider" />
+                    <div class="item row">
+                        <a class="col-md-4 col-12" href={{ project.online_link }} target="_blank">
+                            <img class="img-fluid project-image rounded shadow-sm"
+                                 src="{{ project.image }}"
+                                 alt={{ project.title }}/>
+                        </a>
+                        <div class="desc col-md-8 col-12">
+                            <h3 class="title">
+                                <a href={{ project.online_link }} target="_blank">{{ project.title }} Title</a>
+                            </h3>
+                            <p class="mb-2">
+                                {{ project.description }}
+                            </p>
+                            <p class="d-flex justify-content-between">
+                                <a class="more-link"
+                                   href={{ project.github_link }}
+                                   target="_blank"><i class="fas fa-external-link-alt"></i>Source code</a>
+                                <a class="more-link"
+                                   href={{ project.online_link }}
+                                   target="_blank"><i class="fas fa-external-link-alt"></i>View online</a>
+                            </p>
+                        </div>
+                        <!--//desc-->
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <!--//content-->
+    </div>
+    <!--//section-inner-->
+</section>
+<!--//section-->
