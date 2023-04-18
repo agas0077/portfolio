@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'http://1417935-cz96471.tw1.ru/', '185.124.64.188']
 
 AUTH_USER_MODEL = 'candidate.user'
 
