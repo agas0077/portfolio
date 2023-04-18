@@ -2,7 +2,7 @@
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Testimonials</h2>
         <div class="content">
-            {% for recomendation in user.recomendations.all %}
+            {% for recomendation in candidate.recomendations.all %}
                 <div class="item">
                     <blockquote class="quote">                                  
                         <p><i class="fas fa-quote-left"></i>{{ recomendation.text }}</p>

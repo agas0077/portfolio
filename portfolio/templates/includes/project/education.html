@@ -2,7 +2,7 @@
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Education</h2>
         <div class="content">
-            {% for education in user.educations.all %}
+            {% for education in candidate.educations.all %}
                 <div class="item">                      
                     <h3 class="title"><i class="fas fa-graduation-cap"></i> {{ education.title }} </h3>
                     <h4 class="university">{{ educattion.place }} <span class="year">({{ education.date_from|date:"Y" }}-{{ education.date_to|date:"Y"|default:"Present" }})</span></h4>

@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="primary col-lg-8 col-12">
-        {% if user.about %}{% include "includes/project/about.html" %}{% endif %}
-        {% include "includes/project/project_list.html" %}
-        {% include "includes/project/other_project_list.html" %}
-        {% if user.jobs.all|length > 0 %}{% include "includes/project/work_experience.html" %}{% endif %}
-        {% include "includes/project/github.html" %}
-        {% include "includes/project/contacts.html" %} 
+        {% if candidate.about %}{% include "includes/project/about.html" %}{% endif %}
+        {% if candidate.projects.all|length > 0 %}{% include "includes/project/project_list.html" %}{% endif %}
+        {% if candidate.other_projects.all|length > 0 %}{% include "includes/project/other_project_list.html" %}{% endif %}
+        {% if candidate.jobs.all|length > 0 %}{% include "includes/project/work_experience.html" %}{% endif %}
+        {% comment %} {% if candidate.github %}{% include "includes/project/github.html" %}{% endif %} {% endcomment %}
+        {% if candidate.email and candidate.phone_num %}{% include "includes/project/contacts.html" %}{% endif %}
     </div>
     <div class="primary col-lg-4 col-12">
-        {% if user.skills.all|length > 0 %}{% include "includes/project/skills.html" %}{% endif %}
-        {% if user.recomendations.all|length > 0 %}{% include "includes/project/recomendations.html" %}{% endif %}
-        {% if user.languages.all|length > 0 %}{% include "includes/project/languages.html" %}{% endif %}
-        {% if user.educations.all|length > 0 %}{% include "includes/project/education.html" %}{% endif %}
+        {% if candidate.skills.all|length > 0 %}{% include "includes/project/skills.html" %}{% endif %}
+        {% if candidate.recomendations.all|length > 0 %}{% include "includes/project/recomendations.html" %}{% endif %}
+        {% if candidate.languages.all|length > 0 %}{% include "includes/project/languages.html" %}{% endif %}
+        {% if candidate.educations.all|length > 0 %}{% include "includes/project/education.html" %}{% endif %}
     </div>
 {% endblock content %}

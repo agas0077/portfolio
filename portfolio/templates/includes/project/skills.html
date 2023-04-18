@@ -6,7 +6,7 @@
             
             <div class="skillset">
                
-                {% for skill in user.skills.all %}
+                {% for skill in candidate.skills.all %}
                     <div class="item">
                         <h3 class="level-title">{{ skill.title }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="{{ skill.tooltip }}"><i class="fas fa-info-circle"></i>{{ skill.level }}</span></h3>
                         <div class="level-bar progress">

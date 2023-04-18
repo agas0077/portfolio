@@ -2,11 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
-class User(AbstractUser):
+class Candidate(models.Model):
     """Модель пользователя."""
-
-    REQUIRED_FIELDS = ('name', 'surname', 'search_job_title', 'email',
-                       'phone_num', 'city', 'country', 'about', 'distant_work')
 
     name = models.CharField('Имя', max_length=200)
     surname = models.CharField('Фамилия', max_length=200)
@@ -29,9 +26,12 @@ class User(AbstractUser):
         'Ссылка на Stack Overflow', blank=True, null=True)
     codeopen = models.URLField('Ссылка на Codeopen', blank=True, null=True)
 
+    def __str__(self):
+        return f'{self.name} {self.surname}'
+
 
 class Job(models.Model):
-    user = models.ForeignKey(User,
+    user = models.ForeignKey(Candidate,
                              on_delete=models.CASCADE,
                              related_name='jobs')
     title = models.CharField('Должность', max_length=200)
@@ -61,7 +61,7 @@ class Skill(models.Model):
         EXPERT = 90, 'Экспертное владение'
         PRO = 95, 'Профессиональное владение'
 
-    user = models.ForeignKey(User,
+    user = models.ForeignKey(Candidate,
                              on_delete=models.CASCADE,
                              related_name='skills')
     title = models.CharField('Название', max_length=200)
@@ -74,7 +74,7 @@ class Skill(models.Model):
 
 
 class Education(models.Model):
-    user = models.ForeignKey(User,
+    user = models.ForeignKey(Candidate,
                              on_delete=models.CASCADE,
                              related_name='educations')
     title = models.CharField('Название', max_length=200)
@@ -94,7 +94,7 @@ class Language(models.Model):
         FOUR = '0123', 'Четыре звезды'
         FIVE = '01234', 'Пять звезд'
 
-    user = models.ForeignKey(User,
+    user = models.ForeignKey(Candidate,
                              on_delete=models.CASCADE,
                              related_name='languages')
     title = models.CharField('Название', max_length=200)
@@ -107,7 +107,7 @@ class Language(models.Model):
 
 
 class Recomendation(models.Model):
-    user = models.ForeignKey(User,
+    user = models.ForeignKey(Candidate,
                              on_delete=models.CASCADE,
                              related_name='recomendations')
     text = models.TextField('Текст рекомендации')

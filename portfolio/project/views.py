@@ -1,10 +1,11 @@
 from django.shortcuts import render
 
-from project.models import Project
+from candidate.models import Candidate
 # Create your views here.
+
 
 def index(request):
     context = {
-        'projects': Project.objects.all(),
+        'candidate': Candidate.objects.all().first(),
     }
     return render(request, 'project/index.html', context)

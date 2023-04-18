@@ -3,7 +3,7 @@
         <h2 class="heading">Languages</h2>
         <div class="content">
             <ul class="list-unstyled">
-                {% for language in user.languages.all %}
+                {% for language in candidate.languages.all %}
                     <li class="item">
                         <span class="title"><strong>{{ language.title }}:</strong></span>
                         <span class="level">{{ language.level }} <br class="visible-sm visible-xs"/>

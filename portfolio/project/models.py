@@ -1,11 +1,10 @@
 from django.db import models
-from django.contrib.auth import get_user_model
 
-User = get_user_model()
+from candidate.models import Candidate
 
 
 class OtherProject(models.Model):
-    user = models.ForeignKey(User,
+    user = models.ForeignKey(Candidate,
                              on_delete=models.CASCADE,
                              related_name='other_projects')
     title = models.CharField('Название', max_length=200)
@@ -21,7 +20,7 @@ class OtherProject(models.Model):
 
 
 class Project(models.Model):
-    user = models.ForeignKey(User,
+    user = models.ForeignKey(Candidate,
                              on_delete=models.CASCADE,
                              related_name='projects')
     image = models.ImageField('Превью', upload_to='previews/')
