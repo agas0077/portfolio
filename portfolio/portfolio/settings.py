@@ -31,8 +31,7 @@ print('DEBUG = ', DEBUG)
 
 ALLOWED_HOSTS = ['localhost', '1417935-cz96471.tw1.ru', '185.124.64.188']
 
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 # Application definition
 
 INSTALLED_APPS = [
