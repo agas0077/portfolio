@@ -5,6 +5,7 @@ from candidate.models import Candidate
 
 
 def index(request):
+    print(Candidate.objects.all())
     context = {
         'candidate': Candidate.objects.all().first(),
     }

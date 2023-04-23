@@ -27,6 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
+print(DEBUG)
 
 ALLOWED_HOSTS = ['localhost', '1417935-cz96471.tw1.ru', '185.124.64.188']
 
@@ -131,4 +132,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path(BASE_DIR, 'media')
-print()
