@@ -1,9 +1,9 @@
 from django.contrib import admin
-from django.contrib.auth import get_user_model
 
 from candidate.models import (Candidate, Job,
                               Language, Skill,
-                              Education, Recomendation)
+                              Education, Recomendation,
+                              Project, OtherProject)
 # Register your models here.
 
 
@@ -24,9 +24,6 @@ class EducationAdmin(admin.ModelAdmin):
 
 
 class CandidateAdmin(admin.ModelAdmin):
-    # def __init__(self, model, admin_site):
-    #     print([field.name for field in Recomendation._meta.get_fields()])
-    #     super().__init__(model, admin_site)
     list_display = ['id', 'name', 'surname', ]
 
 
@@ -34,6 +31,18 @@ class RecomendationAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Recomendation._meta.get_fields()]
 
 
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Project._meta.get_fields()]
+    empty_value_display = '-пусто-'
+
+
+class OtherProjectAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in OtherProject._meta.get_fields()]
+    empty_value_display = '-пусто-'
+
+
+admin.site.register(Project, ProjectAdmin)
+admin.site.register(OtherProject, OtherProjectAdmin)
 admin.site.register(Job, JobAdmin)
 admin.site.register(Language, LanguageAdmin)
 admin.site.register(Skill, SkillAdmin)

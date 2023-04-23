@@ -27,10 +27,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
-print(DEBUG)
+print('DEBUG = ', DEBUG)
 
 ALLOWED_HOSTS = ['localhost', '1417935-cz96471.tw1.ru', '185.124.64.188']
 
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sorl.thumbnail',
-    'project.apps.ProjectConfig',
     'candidate.apps.CandidateConfig',
 ]
 
