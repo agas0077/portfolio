@@ -29,9 +29,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 print('DEBUG = ', DEBUG)
 
-ALLOWED_HOSTS = ['localhost', '1417935-cz96471.tw1.ru', '185.124.64.188']
+ALLOWED_HOSTS = ['localhost', 'andrey-agas-portfolio.website']
+ADMINS = ("Andrey", "at-am@yandex.ru")
 
-# CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = ['https://andrey-agas-portfolio.website']
 # Application definition
 
 INSTALLED_APPS = [
@@ -124,6 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [Path(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = '/home/portfolio/portfolio/staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
