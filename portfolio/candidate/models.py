@@ -51,7 +51,7 @@ class Skill(models.Model):
     class Level(models.TextChoices):
         GOOD = 'Good', 'Хорошее владение'
         ADVANCED = 'Advanced', 'Продвинутое владение'
-        EXPERT = 'Expect', 'Экспертное владение'
+        EXPERT = 'Expert', 'Экспертное владение'
         PRO = 'Pro', 'Профессиональное владение'
 
     class Percent(models.IntegerChoices):
