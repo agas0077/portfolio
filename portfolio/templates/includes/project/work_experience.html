@@ -5,7 +5,7 @@
             
             {% for job in candidate.jobs.all %}
                 <div class="item">
-                    <h3 class="title">{{ job.title }} <span class="place"><a href={{ job.company_link }}>{{ job.company }}</a></span> <span class="year">({{ job.date_from|date:"F - Y" }} - {{ job.date_to|date:"F - Y"|default:"Present" }})</span></h3>
+                    <h3 class="title">{{ job.title }} <span class="place"><a href={{ job.company_link }}>{{ job.company }}</a></span> <span class="year">({{ job.date_from|date:"F-Y" }} - {{ job.date_to|date:"F-Y"|default:"Present" }})</span></h3>
                     <p>{{ job.description }}</p>
                 </div><!--//item-->
             {% endfor %}
