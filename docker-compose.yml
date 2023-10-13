@@ -17,7 +17,8 @@ services:
       - "5432:5432"
 
   portfolio:
-    build: portfolio/.
+    # build: portfolio/.
+    image: agas0077/portfolio:latest
     env_file: .env
     depends_on:
       - db
