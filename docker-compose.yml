@@ -1,0 +1,41 @@
+version: '3.3'
+
+volumes:
+  pg_data:
+  static_portfolio:
+  media_portfolio:
+
+
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+
+  portfolio:
+    build: portfolio/.
+    env_file: .env
+    depends_on:
+      - db
+    volumes:
+      - static_portfolio:/app/staticfiles/
+      - media_portfolio:/app/media/
+    command: >
+      bash -c "python manage.py migrate 
+      && python manage.py collectstatic --no-input
+      && gunicorn --bind 0.0.0.0:8000 portfolio.wsgi"
+  
+  nginx:
+    depends_on:
+        - portfolio
+    image: nginx:1.19.3
+    ports:
+      - "8001:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - static_portfolio:/static
+      - media_portfolio:/media
