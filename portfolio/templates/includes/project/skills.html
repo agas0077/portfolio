@@ -1,12 +1,14 @@
+
+{% load filters %}
 <aside class="skills aside section">
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Skills</h2>
         <div class="content">
-            <p class="intro">Mostly I focuse on back-end development, however I widen my horizons with some front-end techs and frameworks.</p>
+            <p class="intro">{{ candidate.about_skills }}</p>
             
             <div class="skillset">
                
-                {% for skill in candidate.skills.all %}
+                {% for skill in candidate.skills.all|sort_by:'-percent' %}
                     <div class="item">
                         <h3 class="level-title">{{ skill.title }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="{{ skill.tooltip }}"><i class="fas fa-info-circle"></i>{{ skill.level }}</span></h3>
                         <div class="level-bar progress">
