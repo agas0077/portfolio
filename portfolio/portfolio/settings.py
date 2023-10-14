@@ -34,9 +34,8 @@ ADMINS = ("Andrey", "at-am@yandex.ru")
 
 # CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = [
-    # 'https://andrey-agas-portfolio.website',
-    # 'http://andrey-agas-portfolio.website',
-    '*andrey-agas-portfolio.website',
+    'https://andrey-agas-portfolio.website',
+    'http://andrey-agas-portfolio.website',
 ]
 # Application definition
 
