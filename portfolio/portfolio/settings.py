@@ -36,7 +36,7 @@ ADMINS = ("Andrey", "at-am@yandex.ru")
 CSRF_TRUSTED_ORIGINS = [
     # 'https://andrey-agas-portfolio.website',
     # 'http://andrey-agas-portfolio.website',
-    'http://portfolio:8000', 
+    'http://portfolio:8000/', 
     # 'http://localhost:8001'
 ]
 # Application definition
