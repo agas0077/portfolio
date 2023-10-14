@@ -22,6 +22,7 @@ services:
     env_file: .env
     depends_on:
       - db
+    restart: on-failure:10
     volumes:
       - static_portfolio:/app/staticfiles/
       - media_portfolio:/app/media/
@@ -29,7 +30,7 @@ services:
       bash -c "python manage.py migrate 
       && python manage.py collectstatic --no-input
       && gunicorn --bind 0.0.0.0:8000 portfolio.wsgi"
-  
+
   nginx:
     depends_on:
         - portfolio
