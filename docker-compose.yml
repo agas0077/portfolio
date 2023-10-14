@@ -22,7 +22,7 @@ services:
     env_file: .env
     depends_on:
       - db
-    restart: on-failure:10
+    restart: on-failure:2
     volumes:
       - static_portfolio:/app/staticfiles/
       - media_portfolio:/app/media/
