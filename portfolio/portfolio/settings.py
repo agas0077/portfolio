@@ -32,7 +32,7 @@ print('DEBUG = ', DEBUG)
 ALLOWED_HOSTS = ['localhost', 'andrey-agas-portfolio.website', '127.0.0.1']
 ADMINS = ("Andrey", "at-am@yandex.ru")
 
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = ['https://andrey-agas-portfolio.website',
                         'http://andrey-agas-portfolio.website',
                         'http://localhost:8000']
