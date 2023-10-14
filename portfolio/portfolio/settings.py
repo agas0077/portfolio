@@ -99,6 +99,8 @@ DATABASES = {
     }
 }
 
+for val in DATABASES['default'].values():
+    print(val)
 
 
 # Password validation
