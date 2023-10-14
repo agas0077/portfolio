@@ -33,7 +33,8 @@ ALLOWED_HOSTS = ['localhost', 'andrey-agas-portfolio.website', '127.0.0.1']
 ADMINS = ("Andrey", "at-am@yandex.ru")
 
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ['https://andrey-agas-portfolio.website']
+CSRF_TRUSTED_ORIGINS = ['https://andrey-agas-portfolio.website',
+                        'http://andrey-agas-portfolio.website']
 # Application definition
 
 INSTALLED_APPS = [
@@ -98,10 +99,6 @@ DATABASES = {
         "PORT": os.getenv("POSTGRES_PORT"),
     }
 }
-
-for key, val in DATABASES['default'].items():
-    print(key, val)
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
