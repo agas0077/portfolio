@@ -1,6 +1,7 @@
+# Third Party Library
 from django.apps import AppConfig
 
 
 class CandidateConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'candidate'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "candidate"

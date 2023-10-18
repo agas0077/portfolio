@@ -1,9 +1,16 @@
+# Third Party Library
+from candidate.models import (
+    Candidate,
+    Education,
+    Job,
+    Language,
+    OtherProject,
+    Project,
+    Recomendation,
+    Skill,
+)
 from django.contrib import admin
 
-from candidate.models import (Candidate, Job,
-                              Language, Skill,
-                              Education, Recomendation,
-                              Project, OtherProject)
 # Register your models here.
 
 
@@ -24,7 +31,11 @@ class EducationAdmin(admin.ModelAdmin):
 
 
 class CandidateAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'surname', ]
+    list_display = [
+        "id",
+        "name",
+        "surname",
+    ]
 
 
 class RecomendationAdmin(admin.ModelAdmin):
@@ -33,12 +44,12 @@ class RecomendationAdmin(admin.ModelAdmin):
 
 class ProjectAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Project._meta.get_fields()]
-    empty_value_display = '-пусто-'
+    empty_value_display = "-пусто-"
 
 
 class OtherProjectAdmin(admin.ModelAdmin):
     list_display = [field.name for field in OtherProject._meta.get_fields()]
-    empty_value_display = '-пусто-'
+    empty_value_display = "-пусто-"
 
 
 admin.site.register(Project, ProjectAdmin)

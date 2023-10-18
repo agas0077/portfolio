@@ -1,0 +1,9 @@
+[tool.black]
+line-length = 79
+include = 'portfolio/.*.py'
+extend-exclude = '''
+(
+    migrations/* |
+    static/*
+)
+'''
