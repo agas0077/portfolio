@@ -1,4 +1,4 @@
-name: Main Foodgram workflow
+name: Main portfolio workflow
 
 on:
   push:
