@@ -6,12 +6,17 @@
                 {% for language in candidate.languages.all %}
                     <li class="item">
                         <span class="title"><strong>{{ language.title }}:</strong></span>
-                        <span class="level">{{ language.level }} <br class="visible-sm visible-xs"/>
+                        <span class="level">{{ language.level }}
+                            <br class="visible-sm visible-xs" />
                             {% for star in language.stars|make_list %}<i class="fas fa-star"></i>{% endfor %}
                         </span>
-                    </li><!--//item-->
+                    </li>
+                    <!--//item-->
                 {% endfor %}
             </ul>
-        </div><!--//content-->
-    </div><!--//section-inner-->
-</aside><!--//section-->
+        </div>
+        <!--//content-->
+    </div>
+    <!--//section-inner-->
+</aside>
+<!--//section-->
