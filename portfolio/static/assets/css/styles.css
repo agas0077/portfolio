@@ -86,11 +86,11 @@ a.btn-cta-secondary, .btn-cta-secondary {
   text-transform: uppercase;
 }
 
-a.btn-cta-secondary:hover, a.btn-cta-secondary:not(:disabled):not(.disabled):active:focus, .btn-cta-secondary:hover, .btn-cta-secondary:not(:disabled):not(.disabled):active:focus {
-  background: #3893bd;
+a.btn-cta-secondary:hover, .btn-cta-secondary:hover, .btn-cta-secondary:not(:disabled):not(.disabled):active:focus {
+  background: #3881bd;
   border: 1px solid #3893bd;
   color: #fff;
-  box-shadow: none;
+  box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
 .text-highlight {
