@@ -7,11 +7,13 @@
                 <div class="item">
                     {% if education.image %}
                         <div class="d-flex justify-content-between">
-                            <h3 class="title">
-                                <i class="fas fa-graduation-cap"></i>
-                                {{ education.title }}
-                            </h3>
-                            <button class="btn btn-cta-secondary me-3 py-0 education-btn"
+                            <div class="d-flex justify-content-between">
+                                <h3 class="title">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    {{ education.title }}
+                                </h3>
+                            </div>
+                            <button class="btn btn-cta-secondary py-0 education-btn align-self-start"
                                     id="{{ education.pk }}"
                                     data-bs-toggle="modal"
                                     data-bs-target="#eduationModal">Cert</button>
