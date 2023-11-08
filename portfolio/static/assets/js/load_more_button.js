@@ -11,6 +11,10 @@ function displayHidden(button) {
   projectToDisplay.forEach((element) => {
     element.removeAttribute("hidden");
   });
+
+  if (getHiddenProjects(button).length === 0) {
+    button.setAttribute("disabled", "");
+  };
 }
 
 const loadMoreButtons = [].slice.call(
@@ -21,10 +25,6 @@ loadMoreButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
     displayHidden(button);
-
-    if (getHiddenProjects(button).length === 0) {
-      button.setAttribute("disabled", "");
-    }
   });
 });
 
