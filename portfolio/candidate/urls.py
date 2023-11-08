@@ -1,9 +1,10 @@
 # Third Party Library
-from candidate.views import index
+from candidate.views import index, render_education_certificate
 from django.urls import path
 
 app_name = "candidate"
 
 urlpatterns = [
     path("", index),
+    path("candidate/certificate", render_education_certificate),
 ]

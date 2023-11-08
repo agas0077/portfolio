@@ -87,6 +87,9 @@ class Education(models.Model):
     place = models.CharField("Учебное заведение", max_length=200)
     date_from = models.DateField("Начало обучения")
     date_to = models.DateField("Окончание обучения", blank=True, null=True)
+    image = models.FileField(
+        "Сертификат", upload_to="certificate/", blank=True, null=True
+    )
 
     def __str__(self):
         return self.title

@@ -4,11 +4,19 @@
         <div class="content">
             {% for project in candidate.other_projects.all %}
                 <div class="item">
-                    <h3 class="title"><a href={{ project.github_link }} target="_blank">{{ project.title }}</a></h3>
+                    <h3 class="title">
+                        <a href={{ project.github_link }} target="_blank">{{ project.title }}</a>
+                    </h3>
                     <p class="summary">{{ project.description }}</p>
-                    <p><a class="more-link" href={{ project.github_link }} target="_blank"><i class="fas fa-external-link-alt"></i>View on GitHub</a></p>
-                </div><!--//item-->
+                    <p>
+                        <a class="more-link" href={{ project.github_link }} target="_blank"><i class="fas fa-external-link-alt"></i>View on GitHub</a>
+                    </p>
+                </div>
+                <!--//item-->
             {% endfor %}
-        </div><!--//content-->  
-    </div><!--//section-inner-->                 
-</section><!--//section-->
+        </div>
+        <!--//content-->
+    </div>
+    <!--//section-inner-->
+</section>
+<!--//section-->

@@ -1,48 +1,44 @@
 "use strict";
 
 //Enable tooltips everywhere
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
-})
+});
 
+// Adds certificate pop ups
+const educationButtonList = [].slice.call(document.getElementsByClassName('education-btn'));
+educationButtonList.map(function (element) {
+	element.addEventListener('click', (event) => {
+		const modal = document.getElementById("modal-body-id");
 
-/* Vanilla RSS - https://github.com/sdepold/vanilla-rss */
-
-	// const rss = new RSS(
-	//     document.querySelector("#rss-feeds"),
-	//     //Change this to your own rss feeds
-    //     "https://feeds.feedburner.com/TechCrunch/startups",
-	//     {
-	// 	     // how many entries do you want?
-	// 	    // default: 4
-	// 	    // valid values: any integer
-	// 	    limit: 3,
-		    
-		    
-	// 	    // will request the API via https
-	// 		// default: false
-	// 		// valid values: false, true
-	// 		ssl: true,
-		  
-	// 		 // outer template for the html transformation
-	// 		// default: "<ul>{entries}</ul>"
-	// 		// valid values: any string
-	// 		layoutTemplate: "<div class='items'>{entries}</div>",
+		var id = event.target.id;
+		var placeholder = document.createElement("div");
+		placeholder.classList.add("spinner-border");
+		placeholder.classList.add("text-primary");
+		placeholder.setAttribute("role", "status");
+		modal.appendChild(placeholder);
 		
-	// 		// inner template for each entry
-	// 		// default: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>'
-	// 		// valid values: any string
-	// 		entryTemplate: '<div class="item"><h3 class="title"><a href="{url}" target="_blank">{title}</a></h3><div><p>{shortBodyPlain}</p><a class="more-link" href="{url}" target="_blank"><i class="fas fa-external-link-alt"></i>Read more</a></div></div>',
-		    
-	//     }
-	// );
-	// rss.render();
+		var xhr = new XMLHttpRequest();
+		let url = window.location.origin + "/candidate/certificate?pk=" + id
 
-    
-    /* Github Calendar - https://github.com/IonicaBizau/github-calendar */
-    // new GitHubCalendar("#github-graph", "agas0077", { responsive: true });
-    
-    
-    /* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
-    // GitHubActivity.feed({ username: "mdo", selector: "#ghfeed" });
+		xhr.open("GET", url, true);
+		xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4 && xhr.status === 200) {
+			var response = JSON.parse(xhr.responseText);
+			var pdfBlock = document.createElement("embed");
+			pdfBlock.setAttribute("type", "application/pdf");
+			pdfBlock.setAttribute("width", "100%");
+			pdfBlock.setAttribute("height", "100%");
+			pdfBlock.setAttribute("src", response.url);
+			if (modal.hasChildNodes()) {
+				const modalChildren = [].slice.call(modal.childNodes);
+				modalChildren.map((child) => {modal.removeChild(child)})
+			}
+			modal.appendChild(pdfBlock);
+		}
+	};
+	xhr.send();
+
+	});
+});
