@@ -3,16 +3,14 @@
 <section class="latest section">
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Latest Projects</h2>
-        <div class="content">
+        <div class="content d-flex flex-column">
             {% for project in candidate.projects.all %}
                 {% if forloop.first %}
                     <div class="item featured text-center">
                         <div class="featured-image has-ribbon">
                             <a href={{ project.online_link }} target="_blank">
                                 {% thumbnail project.image "636x270" crop="center" upscale=False quality=100 as im %}
-                                    <img class="img-fluid project-image rounded shadow-sm"
-                                        src={{ im.url }}
-                                        alt={{ project.title }} />
+                                    <img class="img-fluid project-image rounded shadow-sm" src={{ im.url }} alt={{ project.title }} />
                                 {% endthumbnail %}
                             </a>
                             <div class="ribbon">
@@ -30,38 +28,39 @@
                         <a class="btn btn-cta-secondary" href={{ project.online_link }} target="_blank"><i class="fas fa-thumbs-up"></i>View online</a>
                     </div>
                 {% else %}
-                    <hr class="divider" />
-                    <div class="item row">
-                        <a class="col-md-4 col-12" href={{ project.online_link }} target="_blank">
-                            {% thumbnail project.image "636x270" crop="center" upscale=False quality=100 as im %}
-                                <img class="img-fluid project-image rounded shadow-sm"
-                                    src={{ im.url }}
-                                    alt={{ project.title }} />
-                            {% endthumbnail %}
-                        </a>
-                        <div class="desc col-md-8 col-12">
-                            <h3 class="title">
-                                <a href={{ project.online_link }} target="_blank">{{ project.title }}</a>
-                            </h3>
-                            <p class="mb-2">
-                                {{ project.description|safe }}
-                            </p>
-                            <p class="d-flex justify-content-between">
-                                <a class="more-link"
-                                   href={{ project.github_link }}
-                                   target="_blank"><i class="fas fa-external-link-alt"></i>Source code</a>
-                                <a class="more-link"
-                                   href={{ project.online_link }}
-                                   target="_blank"><i class="fas fa-external-link-alt"></i>View online</a>
-                            </p>
+                    <div class="project-card" hidden>
+                        <hr class="divider" />
+                        <div class="item row">
+                            <a class="col-md-4 col-12" href={{ project.online_link }} target="_blank">
+                                {% thumbnail project.image "636x270" crop="center" upscale=False quality=100 as im %}
+                                    <img class="img-fluid project-image rounded shadow-sm" src={{ im.url }} alt={{ project.title }} />
+                                {% endthumbnail %}
+                            </a>
+                            <div class="desc col-md-8 col-12">
+                                <h3 class="title">
+                                    <a href={{ project.online_link }} target="_blank">{{ project.title }}</a>
+                                </h3>
+                                <p class="mb-2">{{ project.description|safe }}</p>
+                                <p class="d-flex justify-content-between">
+                                    <a class="more-link" href={{ project.github_link }} target="_blank"><i class="fas fa-external-link-alt"></i>Source code</a>
+                                    <a class="more-link" href={{ project.online_link }} target="_blank"><i class="fas fa-external-link-alt"></i>View online</a>
+                                </p>
+                            </div>
+                            <!--//desc-->
                         </div>
-                        <!--//desc-->
                     </div>
                 {% endif %}
             {% endfor %}
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-cta-secondary" id="load-more-projects-button">Load More</button>
+            </div>
         </div>
         <!--//content-->
     </div>
     <!--//section-inner-->
 </section>
 <!--//section-->
+{% block more_scripts %}
+    <script type="text/javascript"
+            src="{% static 'assets/js/load_more_button.js' %}"></script>
+{% endblock more_scripts %}

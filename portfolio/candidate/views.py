@@ -1,8 +1,12 @@
+# Standard Library
+from typing import Any
+
 # Third Party Library
 from candidate.models import Candidate
 from candidate.services import get_candidate, get_education_certificate_url
 from django.http import JsonResponse
 from django.shortcuts import render
+from django.views.generic import ListView
 
 # Create your views here.
 
