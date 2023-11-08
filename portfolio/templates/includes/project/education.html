@@ -1,3 +1,4 @@
+{% load static %}
 <aside class="education aside section">
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Education</h2>
@@ -35,3 +36,6 @@
 </aside>
 <!--//section-->
 {% include "includes/pdf_modal.html" %}
+{% block more_scripts %}
+    <script type="text/javascript" src="{% static 'assets/js/certificate.js' %}"></script>
+{% endblock more_scripts %}

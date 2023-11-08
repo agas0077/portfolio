@@ -5,7 +5,7 @@
             You can embed your GitHub contribution graph calendar using IonicaBizau's <a href="https://github.com/agas0077/github-calendar" target="_blank">GitHub Calendar</a> widget.
             <div id="github-graph" class="github-graph"></div>
             <!--//github-graph-->
-            {% comment %} 
+            {% comment %}
         <p>You can also embed your GitHub activities using Casey Scarborough's <a href="https://github.com/caseyscarborough/github-activity" target="_blank">GitHub Activity Stream</a> widget.        
         <!--//Usage: https://caseyscarborough.com/projects/github-activity/ -->                       
         <div id="ghfeed" class="ghfeed"></div><!--//ghfeed--> 
