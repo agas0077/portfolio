@@ -4,14 +4,23 @@
         <div class="content">
             {% for recomendation in candidate.recomendations.all %}
                 <div class="item">
-                    <blockquote class="quote">                                  
-                        <p><i class="fas fa-quote-left"></i>{{ recomendation.text }}</p>
-                    </blockquote>                
-                    <p class="source"><span class="name">{{ recomendation.author }}</span><br /><span class="title">{{ recomendation.author_job_title }}</span></p>                                                             
-                </div><!--//item-->
+                    <blockquote class="quote">
+                        <p>
+                            <i class="fas fa-quote-left"></i>{{ recomendation.text }}
+                        </p>
+                    </blockquote>
+                    <p class="source">
+                        <span class="name">{{ recomendation.author }}</span>
+                        <br />
+                        <span class="title">{{ recomendation.author_job_title }}</span>
+                    </p>
+                </div>
+                <!--//item-->
             {% endfor %}
             {% comment %} <p><a class="more-link" href="#"><i class="fas fa-external-link-alt"></i>More on Linkedin</a></p>  {% endcomment %}
-            
-        </div><!--//content-->
-    </div><!--//section-inner-->
-</aside><!--//section-->
+        </div>
+        <!--//content-->
+    </div>
+    <!--//section-inner-->
+</aside>
+<!--//section-->

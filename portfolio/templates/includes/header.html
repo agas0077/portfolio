@@ -1,50 +1,63 @@
 {% load static %}
 {% load thumbnail %}
 <header class="header">
-    <div class="container">     
+    <div class="container">
         <div class="row align-items-center">
-            <div class="col">         
+            <div class="col">
                 {% thumbnail candidate.image "180x180" crop="center" upscale=False quality=100 as im %}
-                    <img class="profile-image img-fluid float-start rounded-circle"
-                        src={{ im.url }}
-                        alt="profile image" />
+                    <img class="profile-image img-fluid float-start rounded-circle" src={{ im.url }} alt="profile image" />
                 {% endthumbnail %}
                 <div class="profile-content">
                     <h1 class="name">{{ candidate.name }} {{ candidate.surname }}</h1>
-                    <h2 class="desc"> {{ candidate.search_job_title }} </h2>   
+                    <h2 class="desc">{{ candidate.search_job_title }}</h2>
                     <ul class="social list-inline">
                         {% if candidate.telegram %}
-                            <li class="list-inline-item"><a href={{ candidate.telegram }} target="_blank" ><i class="fab fa-telegram"></i></a></li>
+                            <li class="list-inline-item">
+                                <a href={{ candidate.telegram }} target="_blank"><i class="fab fa-telegram"></i></a>
+                            </li>
                         {% endif %}
-
                         {% if candidate.linkedin %}
-                            <li class="list-inline-item"><a href={{ candidate.linkedin }} target="_blank" ><i class="fab fa-linkedin-in"></i></a></li>
+                            <li class="list-inline-item">
+                                <a href={{ candidate.linkedin }} target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
                         {% endif %}
-                        
                         {% if candidate.github %}
-                            <li class="list-inline-item"><a href={{ candidate.github }} target="_blank" ><i class="fab fa-github-alt"></i></a></li>  
+                            <li class="list-inline-item">
+                                <a href={{ candidate.github }} target="_blank"><i class="fab fa-github-alt"></i></a>
+                            </li>
                         {% endif %}
-                        
                         {% if candidate.stack_overflow %}
-                            <li class="list-inline-item"><a href={{ candidate.stack_overflow }} target="_blank" ><i class="fab fa-stack-overflow"></i></a></li>   
+                            <li class="list-inline-item">
+                                <a href={{ candidate.stack_overflow }} target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                            </li>
                         {% endif %}
-                        
                         {% if candidate.codeopen %}
-                            <li class="list-inline-item last-item"><a href={{ candidate.codeopen }} target="_blank" ><i class="fab fa-codepen"></i></a></li>                
+                            <li class="list-inline-item last-item">
+                                <a href={{ candidate.codeopen }} target="_blank"><i class="fab fa-codepen"></i></a>
+                            </li>
                         {% endif %}
-                          
-                    </ul> 
-                </div><!--//profile-->
-            </div><!--//col-->
+                    </ul>
+                </div>
+                <!--//profile-->
+            </div>
+            <!--//col-->
             <div class="col-12 col-md-auto">
                 <div class="dark-mode-switch d-flex">
                     <div class="form-check form-switch mx-auto mx-md-0">
                         <input type="checkbox" class="form-check-input me-2" id="darkSwitch" />
                         <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
                     </div>
-                </div><!--//dark-mode-switch-->
-                <a class="btn btn-cta-primary" href={{ candidate.linkedin }} target="_blank"><i class="fas fa-paper-plane"></i> Contact Me</a>        
-            </div><!--//col-->
-        </div><!--//row-->         
-    </div><!--//container-->
-</header><!--//header-->
+                </div>
+                <!--//dark-mode-switch-->
+                <a class="btn btn-cta-primary" href={{ candidate.linkedin }} target="_blank">
+                    <i class="fas fa-paper-plane"></i>
+                    Contact Me
+                </a>
+            </div>
+            <!--//col-->
+        </div>
+        <!--//row-->
+    </div>
+    <!--//container-->
+</header>
+<!--//header-->

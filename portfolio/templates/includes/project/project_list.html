@@ -24,8 +24,14 @@
                             <p>{{ project.description|safe }}</p>
                         </div>
                         <!--//desc-->
-                        <a class="btn btn-cta-secondary me-3" href={{ project.github_link }} target="_blank"><i class="fas fa-thumbs-up"></i>Source code</a>
-                        <a class="btn btn-cta-secondary" href={{ project.online_link }} target="_blank"><i class="fas fa-thumbs-up"></i>View online</a>
+                        <a class="btn btn-cta-secondary me-3" href={{ project.github_link }} target="_blank">
+                            <i class="fas fa-thumbs-up"></i>
+                            Source code
+                        </a>
+                        <a class="btn btn-cta-secondary" href={{ project.online_link }} target="_blank">
+                            <i class="fas fa-thumbs-up"></i>
+                            View online
+                        </a>
                     </div>
                 {% else %}
                     <div class="project-card" hidden>
@@ -42,8 +48,14 @@
                                 </h3>
                                 <p class="mb-2">{{ project.description|safe }}</p>
                                 <p class="d-flex justify-content-between">
-                                    <a class="more-link" href={{ project.github_link }} target="_blank"><i class="fas fa-external-link-alt"></i>Source code</a>
-                                    <a class="more-link" href={{ project.online_link }} target="_blank"><i class="fas fa-external-link-alt"></i>View online</a>
+                                    <a class="more-link" href={{ project.github_link }} target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Source code
+                                    </a>
+                                    <a class="more-link" href={{ project.online_link }} target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        View online
+                                    </a>
                                 </p>
                             </div>
                             <!--//desc-->

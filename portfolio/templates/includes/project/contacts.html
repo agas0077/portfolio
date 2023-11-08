@@ -4,10 +4,14 @@
         <div class="content">
             <ul class="list-unstyled">
                 <li>
-                    <i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>{{ candidate.city }}, {{ candidate.country }}
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="sr-only">Location:</span>
+                    {{ candidate.city }}, {{ candidate.country }}
                 </li>
                 <li>
-                    <i class="fas fa-envelope"></i><span class="sr-only">Email:</span><a href="mailto:{{ candidate.email }}">{{ candidate.email }}</a>
+                    <i class="fas fa-envelope"></i>
+                    <span class="sr-only">Email:</span>
+                    <a href="mailto:{{ candidate.email }}">{{ candidate.email }}</a>
                 </li>
             </ul>
         </div>
