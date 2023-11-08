@@ -1,17 +1,41 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
     <div class="primary col-lg-8 col-12">
-        {% if candidate.about %}{% include "includes/project/about.html" %}{% endif %}
-        {% if candidate.projects.all|length > 0 %}{% include "includes/project/project_list.html" %}{% endif %}
-        {% if candidate.other_projects.all|length > 0 %}{% include "includes/project/other_project_list.html" %}{% endif %}
-        {% if candidate.jobs.all|length > 0 %}{% include "includes/project/work_experience.html" %}{% endif %}
+        {% if candidate.about %}
+            {% include "includes/project/about.html" %}
+        {% endif %}
+        {% if candidate.projects.all|length > 0 %}
+            {% include "includes/project/project_list.html" %}
+        {% endif %}
+        {% if candidate.other_projects.all|length > 0 %}
+            {% include "includes/project/other_project_list.html" %}
+        {% endif %}
+        {% if candidate.jobs.all|length > 0 %}
+            {% include "includes/project/work_experience.html" %}
+        {% endif %}
         {% comment %} {% if candidate.github %}{% include "includes/project/github.html" %}{% endif %} {% endcomment %}
-        {% if candidate.email and candidate.phone_num %}{% include "includes/project/contacts.html" %}{% endif %}
+        {% if candidate.email and candidate.phone_num %}
+            {% include "includes/project/contacts.html" %}
+        {% endif %}
     </div>
     <div class="primary col-lg-4 col-12">
-        {% if candidate.skills.all|length > 0 %}{% include "includes/project/skills.html" %}{% endif %}
-        {% if candidate.recomendations.all|length > 0 %}{% include "includes/project/recomendations.html" %}{% endif %}
-        {% if candidate.languages.all|length > 0 %}{% include "includes/project/languages.html" %}{% endif %}
-        {% if candidate.educations.all|length > 0 %}{% include "includes/project/education.html" %}{% endif %}
+        {% if candidate.skills.all|length > 0 %}
+            {% include "includes/project/skills.html" %}
+        {% endif %}
+        {% if candidate.recomendations.all|length > 0 %}
+            {% include "includes/project/recomendations.html" %}
+        {% endif %}
+        {% if candidate.languages.all|length > 0 %}
+            {% include "includes/project/languages.html" %}
+        {% endif %}
+        {% if candidate.educations.all|length > 0 %}
+            {% include "includes/project/education.html" %}
+        {% endif %}
     </div>
 {% endblock content %}
+{% block more_scripts %}
+    <script type="text/javascript"
+            src="{% static 'assets/js/load_more_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/tooltip.js' %}"></script>
+{% endblock more_scripts %}
