@@ -10,6 +10,7 @@ from candidate.models import (
     Skill,
 )
 from django.contrib import admin
+from django.contrib.auth.models import Group
 
 # Register your models here.
 
@@ -35,6 +36,7 @@ class CandidateAdmin(admin.ModelAdmin):
         "id",
         "name",
         "surname",
+        "is_chosen_user",
     ]
 
 
@@ -60,3 +62,5 @@ admin.site.register(Skill, SkillAdmin)
 admin.site.register(Education, EducationAdmin)
 admin.site.register(Candidate, CandidateAdmin)
 admin.site.register(Recomendation, RecomendationAdmin)
+
+admin.site.unregister(Group)
