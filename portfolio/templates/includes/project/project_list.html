@@ -23,22 +23,26 @@
                             <p>{{ project.description|safe }}</p>
                         </div>
                         <!--//desc-->
-                        <a class="btn btn-cta-secondary me-3" href={{ project.github_link }} target="_blank">
-                            <i class="fas fa-thumbs-up"></i>
-                            Source code
-                        </a>
-                        <a class="btn btn-cta-secondary" href={{ project.online_link }} target="_blank">
-                            <i class="fas fa-thumbs-up"></i>
-                            View online
-                        </a>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-cta-secondary me-3" href={{ project.github_link }} target="_blank">
+                                <i class="fas fa-thumbs-up"></i>
+                                Source code
+                            </a>
+                            <a class="btn btn-cta-secondary" href={{ project.online_link }} target="_blank">
+                                <i class="fas fa-thumbs-up"></i>
+                                View online
+                            </a>
+                        </div>
                     </div>
                 {% else %}
-                    <div class="project-card" hidden>
+                <div class="project-card" hidden>
                         <hr class="divider" />
                         <div class="item row">
-                            <a class="col-md-4 col-12" href={{ project.online_link }} target="_blank">
+                            <a class="d-flex justify-content-center col-md-4 col-12" href={{ project.online_link }} target="_blank">
                                 {% thumbnail project.image "636x270" crop="center" upscale=False quality=100 as im %}
-                                    <img class="img-fluid project-image rounded shadow-sm" src={{ im.url }} alt={{ project.title }} />
+                                    <div>
+                                        <img class="img-fluid project-image rounded shadow-sm" src={{ im.url }} alt={{ project.title }} />
+                                    </div>
                                 {% endthumbnail %}
                             </a>
                             <div class="desc col-md-8 col-12">
