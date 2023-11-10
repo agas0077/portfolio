@@ -3,7 +3,7 @@
         <h2 class="heading">Other Projects</h2>
         <div class="content">
             {% for project in candidate.other_projects.all %}
-                <div class="item project-card" hidden>
+                <div class="item load-more-card" hidden>
                     <h3 class="title">
                         <a href={{ project.github_link }} target="_blank">{{ project.title }}</a>
                     </h3>
@@ -18,7 +18,7 @@
                 <!--//item-->
             {% endfor %}
             <div class="d-flex justify-content-center">
-                <button class="btn btn-cta-secondary load-more-projects-button">Load More</button>
+                <button class="btn btn-cta-secondary load-more-button">Load More</button>
             </div>
         </div>
         <!--//content-->
