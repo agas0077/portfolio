@@ -3,7 +3,7 @@
         <h2 class="heading">Work Experience</h2>
         <div class="content">
             {% for job in candidate.jobs.all %}
-                <div class="item">
+                <div class="item load-more-card" hidden>
                     <h3 class="title">
                         {{ job.title }}
                         <span class="place">
@@ -15,6 +15,9 @@
                 </div>
                 <!--//item-->
             {% endfor %}
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-cta-secondary load-more-button">Load More</button>
+            </div>
         </div>
         <!--//content-->
     </div>
