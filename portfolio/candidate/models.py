@@ -1,5 +1,6 @@
 # Third Party Library
 from django.db import models
+from django.db.models import Q
 
 
 class Candidate(models.Model):
@@ -31,6 +32,20 @@ class Candidate(models.Model):
         "Ссылка на Stack Overflow", blank=True, null=True
     )
     codeopen = models.URLField("Ссылка на Codeopen", blank=True, null=True)
+
+    is_chosen_user = models.BooleanField(
+        "Выбранный пользователь",
+        default=True,
+    )
+
+    class Meta:
+        constraints = [
+            models.constraints.UniqueConstraint(
+                fields=["is_chosen_user"],
+                condition=Q(is_chosen_user=True),
+                name="unique_is_chosen_user",
+            )
+        ]
 
     def __str__(self):
         return f"{self.name} {self.surname}"
