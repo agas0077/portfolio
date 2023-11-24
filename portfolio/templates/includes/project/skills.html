@@ -10,10 +10,7 @@
                     <div class="item">
                         <h3 class="level-title">
                             {{ skill.title }}
-                            <span class="level-label"
-                                  data-bs-toggle="tooltip"
-                                  data-bs-placement="left"
-                                  title="{{ skill.tooltip }}"><i class="fas fa-info-circle"></i>{{ skill.level }}</span>
+                            <span class="level-label"><i class="fas fa-graduation-cap"></i>{{ skill.level }}</span>
                         </h3>
                         <div class="level-bar progress">
                             <div class="progress-bar level-bar-inner" role="progressbar" style="width: {{ skill.percent }}%" aria-valuenow={{ skill.percent }} aria-valuemin="0" aria-valuemax={{ skill.percent }}>

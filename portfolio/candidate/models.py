@@ -98,7 +98,6 @@ class Skill(models.Model):
         related_name="skills",
     )
     title = models.CharField(_("Title"), max_length=200)
-    tooltip = models.CharField(_("Tooltip"), max_length=100)
     level = models.CharField(_("Level"), max_length=100, choices=Level.choices)
     percent = models.IntegerField(_("Percentage"), choices=Percent.choices)
 

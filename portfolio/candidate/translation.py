@@ -34,7 +34,6 @@ class JobTranslationOption(TranslationOptions):
 class SkillTranslationOption(TranslationOptions):
     fields = [
         "title",
-        "tooltip",
     ]
 
 
