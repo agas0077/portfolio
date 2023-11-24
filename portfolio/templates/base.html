@@ -1,32 +1,62 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE HTML5>
 <html lang="en">
       <head>
-            <title>{{ candidate.name }} {{candidate.surname}} Protfolio</title>
+            <title>{{ candidate.name }} {{ candidate.surname }} {% trans "Protfolio" %}</title>
             <!-- Meta -->
-            <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
-            <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-57x57.png' %}">
-            <link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-icon-57x57.png' %}">
-            <link rel="apple-touch-icon" sizes="76x76" href="{% static 'favicon/apple-icon-76x76.png' %}">
-            <link rel="apple-touch-icon" sizes="114x114" href="{% static 'favicon/apple-icon-114x114.png' %}">
-            <link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon/apple-icon-120x120.png' %}">
-            <link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-icon-144x144.png' %}">
-            <link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}">
-            <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
-            <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'favicon/android-icon-192x192.png' %}">
-            <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-            <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
-            <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+            <link rel="apple-touch-icon"
+                  sizes="57x57"
+                  href="{% static 'favicon/apple-icon-57x57.png' %}">
+            <link rel="apple-touch-icon"
+                  sizes="60x60"
+                  href="{% static 'favicon/apple-icon-57x57.png' %}">
+            <link rel="apple-touch-icon"
+                  sizes="72x72"
+                  href="{% static 'favicon/apple-icon-57x57.png' %}">
+            <link rel="apple-touch-icon"
+                  sizes="76x76"
+                  href="{% static 'favicon/apple-icon-76x76.png' %}">
+            <link rel="apple-touch-icon"
+                  sizes="114x114"
+                  href="{% static 'favicon/apple-icon-114x114.png' %}">
+            <link rel="apple-touch-icon"
+                  sizes="120x120"
+                  href="{% static 'favicon/apple-icon-120x120.png' %}">
+            <link rel="apple-touch-icon"
+                  sizes="144x144"
+                  href="{% static 'favicon/apple-icon-144x144.png' %}">
+            <link rel="apple-touch-icon"
+                  sizes="152x152"
+                  href="{% static 'favicon/apple-icon-152x152.png' %}">
+            <link rel="apple-touch-icon"
+                  sizes="180x180"
+                  href="{% static 'favicon/apple-icon-180x180.png' %}">
+            <link rel="icon"
+                  type="image/png"
+                  sizes="192x192"
+                  href="{% static 'favicon/android-icon-192x192.png' %}">
+            <link rel="icon"
+                  type="image/png"
+                  sizes="32x32"
+                  href="{% static 'favicon/favicon-32x32.png' %}">
+            <link rel="icon"
+                  type="image/png"
+                  sizes="96x96"
+                  href="{% static 'favicon/favicon-96x96.png' %}">
+            <link rel="icon"
+                  type="image/png"
+                  sizes="16x16"
+                  href="{% static 'favicon/favicon-16x16.png' %}">
             <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
             <meta name="msapplication-TileColor" content="#ffffff">
             <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
             <meta name="theme-color" content="#ffffff">
-
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description"
-                  content="{{ candidate.name }} {{candidate.surname}}. Web-dev. Open for job. Ready to relocate.">
+                  content="{{ candidate.name }} {{ candidate.surname }}. Web-dev. Open for job. Ready to relocate.">
             <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
             <link rel="shortcut icon" href="favicon.ico">
             <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic'
@@ -41,8 +71,7 @@
             <link rel="stylesheet"
                   href="{% static 'assets/plugins/bootstrap/css/bootstrap.css' %}">
             <!-- github calendar css -->
-            {% comment %} <link rel="stylesheet"
-                  href="{% static 'assets/plugins/github-calendar/dist/github-calendar-responsive.css' %}"> {% endcomment %}
+            {% comment %} <link rel="stylesheet" href="{% static 'assets/plugins/github-calendar/dist/github-calendar-responsive.css' %}"> {% endcomment %}
             <!-- github activity css -->
             <link rel="stylesheet"
                   href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
@@ -67,19 +96,18 @@
                     src="{% static 'assets/plugins/popper.min.js' %}"></script>
             <script type="text/javascript"
                     src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-            {% comment %} <script type="text/javascript"
-                    src="{% static 'assets/plugins/vanilla-rss/dist/rss.global.min.js' %}"></script>  {% endcomment %}
+            {% comment %} <script type="text/javascript" src="{% static 'assets/plugins/vanilla-rss/dist/rss.global.min.js' %}"></script>  {% endcomment %}
             <script type="text/javascript"
                     src="{% static 'assets/plugins/dark-mode-switch/dark-mode-switch.min.js' %}"></script>
             <!-- github calendar plugin -->
-            {% comment %} <script type="text/javascript"
-                    src="{% static 'assets/plugins/github-calendar/dist/github-calendar.min.js' %}"></script> {% endcomment %}
+            {% comment %} <script type="text/javascript" src="{% static 'assets/plugins/github-calendar/dist/github-calendar.min.js' %}"></script> {% endcomment %}
             <!-- github activity plugin -->
             <script type="text/javascript"
                     src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
             <script type="text/javascript"
                     src="{% static 'assets/plugins/github-activity/src/github-activity.js' %}"></script>
             <!-- custom js -->
-            {% block more_scripts %}{% endblock more_scripts %}
+            {% block more_scripts %}
+            {% endblock more_scripts %}
       </body>
 </html>

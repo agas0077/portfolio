@@ -1,6 +1,7 @@
+{% load i18n %}
 <section class="experience section">
     <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Work Experience</h2>
+        <h2 class="heading">{% trans "Work Experience" %}</h2>
         <div class="content">
             {% for job in candidate.jobs.all %}
                 <div class="item load-more-card" hidden>
@@ -9,15 +10,19 @@
                         <span class="place">
                             <a href={{ job.company_link }}>{{ job.company }}</a>
                         </span>
-                        <span class="year">({{ job.date_from|date:"F Y" }} - {{ job.date_to|date:"F Y"|default:"Present" }})</span>
+                        <span class="year">({{ job.date_from|date:"F Y" }} -
+                            {% if job.date_to %}
+                                {{ job.date_to|date:"F Y" }}
+                            {% else %}
+                                {% trans "Present" %}
+                            {% endif %}
+                        )</span>
                     </h3>
                     <p>{{ job.description }}</p>
                 </div>
                 <!--//item-->
             {% endfor %}
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-cta-secondary load-more-button">Load More</button>
-            </div>
+            {% include "includes/load_more_button.html" %}
         </div>
         <!--//content-->
     </div>

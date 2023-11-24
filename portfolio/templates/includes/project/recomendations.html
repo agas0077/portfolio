@@ -1,6 +1,7 @@
+{% load i18n %}
 <aside class="testimonials aside section">
     <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Testimonials</h2>
+        <h2 class="heading">{% trans "Testimonials" %}</h2>
         <div class="content">
             {% for recomendation in candidate.recomendations.all %}
                 <div class="item">

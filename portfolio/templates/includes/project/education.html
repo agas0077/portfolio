@@ -1,7 +1,8 @@
+{% load i18n %}
 {% load static %}
 <aside class="education aside section">
     <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Education</h2>
+        <h2 class="heading">{% trans "Education" %}</h2>
         <div class="content">
             {% for education in candidate.educations.all %}
                 <div class="item">
@@ -16,7 +17,7 @@
                             <button class="btn btn-cta-secondary py-0 education-btn align-self-start"
                                     id="{{ education.pk }}"
                                     data-bs-toggle="modal"
-                                    data-bs-target="#eduationModal">Cert</button>
+                                    data-bs-target="#eduationModal">{% trans "Cert" %}</button>
                         </div>
                     {% else %}
                         <h3 class="title">
