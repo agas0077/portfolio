@@ -1,4 +1,5 @@
 # Third Party Library
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
@@ -85,12 +86,6 @@ class Skill(models.Model):
         EXPERT = "Expert", _("Expert")
         PRO = "Pro", _("Pro")
 
-    class Percent(models.IntegerChoices):
-        GOOD = 80, _("Good")
-        ADVANCED = 85, _("Advanced")
-        EXPERT = 90, _("Expert")
-        PRO = 95, _("Pro")
-
     candidate = models.ForeignKey(
         Candidate,
         verbose_name=_("Candidate"),
@@ -99,7 +94,13 @@ class Skill(models.Model):
     )
     title = models.CharField(_("Title"), max_length=200)
     level = models.CharField(_("Level"), max_length=100, choices=Level.choices)
-    percent = models.IntegerField(_("Percentage"), choices=Percent.choices)
+    percent = models.PositiveSmallIntegerField(
+        _("Percentage"),
+        validators=[MaxValueValidator(100), MinValueValidator(1)],
+    )
+
+    class Meta:
+        ordering = ("-percent",)
 
     def __str__(self):
         return self.title
