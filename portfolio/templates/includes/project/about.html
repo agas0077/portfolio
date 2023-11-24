@@ -1,6 +1,7 @@
+{% load i18n %}
 <section class="about section">
     <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">About Me</h2>
+        <h2 class="heading">{% trans "About Me" %}</h2>
         <div class="content">
             <p>{{ candidate.about|linebreaks }}</p>
         </div>

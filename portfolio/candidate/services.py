@@ -3,7 +3,7 @@ from candidate.models import Candidate
 
 
 def get_candidate():
-    return Candidate.objects.get(is_chosen_user=True)
+    return Candidate.objects.get(is_chosen_candidate=True)
 
 
 def get_education_certificate_url(pk):

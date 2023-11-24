@@ -1,7 +1,8 @@
+{% load i18n %}
 {% load filters %}
 <aside class="skills aside section">
     <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Skills</h2>
+        <h2 class="heading">{% trans "Skills" %}</h2>
         <div class="content">
             <p class="intro">{{ candidate.about_skills }}</p>
             <div class="skillset">

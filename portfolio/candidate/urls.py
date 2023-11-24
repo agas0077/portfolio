@@ -5,6 +5,10 @@ from django.urls import path
 app_name = "candidate"
 
 urlpatterns = [
-    path("", index),
-    path("candidate/certificate", render_education_certificate),
+    path("", index, name="index"),
+    path(
+        "candidate/certificate",
+        render_education_certificate,
+        name="certificate",
+    ),
 ]
