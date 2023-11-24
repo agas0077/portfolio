@@ -258,7 +258,7 @@ msgstr "Другие проекты"
 
 #: portfolio/templates/includes/project/other_project_list.html:15
 msgid "View on GitHub"
-msgstr "Посмотреть на GitHub"
+msgstr "Смотреть на GitHub"
 
 #: portfolio/templates/includes/project/project_list.html:5
 msgid "Latest Projects"
@@ -276,7 +276,7 @@ msgstr "Исходный код"
 #: portfolio/templates/includes/project/project_list.html:34
 #: portfolio/templates/includes/project/project_list.html:61
 msgid "View online"
-msgstr "Посмотреть онлайн"
+msgstr "Смотреть онлайн"
 
 #: portfolio/templates/includes/project/recomendations.html:4
 msgid "Testimonials"
