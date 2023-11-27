@@ -1,3 +1,6 @@
+# Standard Library
+from email.policy import default
+
 # Third Party Library
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
@@ -8,6 +11,7 @@ from django.utils.translation import gettext_lazy as _
 class Candidate(models.Model):
     """Модель пользователя."""
 
+    title = models.CharField(_("Title"), max_length=200, default="candidate")
     name = models.CharField(_("Name"), max_length=200)
     surname = models.CharField(_("Surname"), max_length=200)
     image = models.ImageField(
@@ -55,7 +59,7 @@ class Candidate(models.Model):
         ]
 
     def __str__(self):
-        return f"{self.name} {self.surname}"
+        return f"{self.name} {self.surname} - {self.title}"
 
 
 class Job(models.Model):

@@ -38,9 +38,7 @@ class BaseTranslationAdmin(TranslationAdmin):
 @admin.register(Candidate)
 class CandidateAdmin(TranslationAdmin):
     list_display = [
-        "id",
-        "name",
-        "surname",
+        "title",
         "is_chosen_candidate",
     ]
 
@@ -51,8 +49,25 @@ class FileAdmin(admin.ModelAdmin):
 
 
 @admin.register(Job)
-class JobAdmin(BaseTranslationAdmin):
-    pass
+class JobAdmin(TranslationAdmin):
+    list_display = [
+        "title",
+        "company",
+    ]
+
+
+@admin.register(OtherProject)
+class OtherProjectAdmin(TranslationAdmin):
+    list_display = [
+        "title",
+    ]
+
+
+@admin.register(Project)
+class ProjectAdmin(BaseTranslationAdmin):
+    list_display = [
+        "title",
+    ]
 
 
 @admin.register(Language)
@@ -77,16 +92,6 @@ class EducationAdmin(BaseTranslationAdmin):
 
 @admin.register(Recomendation)
 class RecomendationAdmin(BaseTranslationAdmin):
-    pass
-
-
-@admin.register(Project)
-class ProjectAdmin(BaseTranslationAdmin):
-    pass
-
-
-@admin.register(OtherProject)
-class OtherProjectAdmin(BaseTranslationAdmin):
     pass
 
 
