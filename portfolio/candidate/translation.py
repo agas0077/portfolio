@@ -2,6 +2,7 @@
 from candidate.models import (
     Candidate,
     Education,
+    File,
     HardSkill,
     Job,
     Language,

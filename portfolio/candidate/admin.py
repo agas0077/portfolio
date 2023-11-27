@@ -2,6 +2,7 @@
 from candidate.models import (
     Candidate,
     Education,
+    File,
     HardSkill,
     Job,
     Language,
@@ -13,6 +14,7 @@ from candidate.models import (
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from modeltranslation.admin import TranslationAdmin
+from pyexpat import model
 
 # Register your models here.
 
@@ -66,6 +68,12 @@ class ProjectAdmin(TranslationAdmin):
 @admin.register(OtherProject)
 class OtherProjectAdmin(TranslationAdmin):
     list_display = [field.name for field in OtherProject._meta.get_fields()]
+    empty_value_display = "-пусто-"
+
+
+@admin.register(File)
+class FileAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in File._meta.get_fields()]
     empty_value_display = "-пусто-"
 
 

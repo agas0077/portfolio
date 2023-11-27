@@ -221,3 +221,30 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class File(models.Model):
+    """
+    Model for storing candidates files such as CV
+    or something of that kind.
+    """
+
+    candidate = models.ForeignKey(
+        Candidate,
+        verbose_name=_("Candidate"),
+        on_delete=models.CASCADE,
+        related_name="files",
+    )
+    image = models.FileField(
+        _("File"),
+        upload_to="files/",
+    )
+    title = models.CharField(_("Title"), max_length=200)
+    description = models.TextField(_("Description"), blank=True, null=True)
+    change_date = models.DateTimeField(_("Change date"), auto_now=True)
+
+    class Meta:
+        ordering = ("-change_date",)
+
+    def __str__(self):
+        return self.title
