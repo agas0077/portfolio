@@ -80,14 +80,7 @@ class Job(models.Model):
 
 
 class Skill(models.Model):
-    class Level(models.TextChoices):
-        GOOD = "Good", _("Good")
-        ADVANCED = "Advanced", _("Advanced")
-        EXPERT = "Expert", _("Expert")
-        PRO = "Pro", _("Pro")
-
     title = models.CharField(_("Title"), max_length=200)
-    level = models.CharField(_("Level"), max_length=100, choices=Level.choices)
     percent = models.PositiveSmallIntegerField(
         _("Percentage"),
         validators=[MaxValueValidator(100), MinValueValidator(1)],
@@ -102,12 +95,19 @@ class Skill(models.Model):
 
 
 class HardSkill(Skill):
+    class Level(models.TextChoices):
+        GOOD = "Good", _("Good")
+        ADVANCED = "Advanced", _("Advanced")
+        EXPERT = "Expert", _("Expert")
+        PRO = "Pro", _("Pro")
+
     candidate = models.ForeignKey(
         Candidate,
         verbose_name=_("Candidate"),
         on_delete=models.CASCADE,
         related_name="hard_skills",
     )
+    level = models.CharField(_("Level"), max_length=100, choices=Level.choices)
 
     class Meta(Skill.Meta):
         abstract = False
@@ -119,9 +119,6 @@ class SoftSkill(Skill):
         verbose_name=_("Candidate"),
         on_delete=models.CASCADE,
         related_name="soft_skills",
-    )
-    tooltip = models.CharField(
-        _("Tooltip"), max_length=200, blank=True, null=True
     )
 
     class Meta(Skill.Meta):
