@@ -2,12 +2,13 @@
 from candidate.models import (
     Candidate,
     Education,
+    HardSkill,
     Job,
     Language,
     OtherProject,
     Project,
     Recomendation,
-    Skill,
+    SoftSkill,
 )
 from django.contrib import admin
 from django.contrib.auth.models import Group
@@ -26,9 +27,14 @@ class LanguageAdmin(TranslationAdmin):
     list_display = [field.name for field in Language._meta.get_fields()]
 
 
-@admin.register(Skill)
-class SkillAdmin(TranslationAdmin):
-    list_display = [field.name for field in Skill._meta.get_fields()]
+@admin.register(HardSkill)
+class HardSkillAdmin(TranslationAdmin):
+    list_display = [field.name for field in HardSkill._meta.get_fields()]
+
+
+@admin.register(SoftSkill)
+class SoftSkillAdmin(TranslationAdmin):
+    list_display = [field.name for field in SoftSkill._meta.get_fields()]
 
 
 @admin.register(Education)

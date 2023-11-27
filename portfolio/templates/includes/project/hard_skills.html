@@ -2,11 +2,11 @@
 {% load filters %}
 <aside class="skills aside section">
     <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">{% trans "Skills" %}</h2>
+        <h2 class="heading">Hard Skills</h2>
         <div class="content">
             <p class="intro">{{ candidate.about_skills }}</p>
             <div class="skillset">
-                {% for skill in candidate.skills.all|sort_by:'-percent' %}
+                {% for skill in candidate.hard_skills.all|sort_by:'-percent' %}
                     <div class="item">
                         <h3 class="level-title">
                             {{ skill.title }}
@@ -16,15 +16,9 @@
                             <div class="progress-bar level-bar-inner" role="progressbar" style="width: {{ skill.percent }}%" aria-valuenow={{ skill.percent }} aria-valuemin="0" aria-valuemax={{ skill.percent }}>
                             </div>
                         </div>
-                        <!--//level-bar-->
                     </div>
-                    <!--//item-->
                 {% endfor %}
-                {% comment %} <p><a class="more-link" href="#"><i class="fas fa-external-link-alt"></i>More on GitHub</a></p>  {% endcomment %}
             </div>
         </div>
-        <!--//content-->
     </div>
-    <!--//section-inner-->
 </aside>
-<!--//section-->

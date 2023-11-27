@@ -2,12 +2,13 @@
 from candidate.models import (
     Candidate,
     Education,
+    HardSkill,
     Job,
     Language,
     OtherProject,
     Project,
     Recomendation,
-    Skill,
+    SoftSkill,
 )
 from modeltranslation.translator import register, TranslationOptions
 
@@ -30,8 +31,15 @@ class JobTranslationOption(TranslationOptions):
     fields = ["title", "description", "company"]
 
 
-@register(Skill)
-class SkillTranslationOption(TranslationOptions):
+@register(HardSkill)
+class HardSkillTranslationOption(TranslationOptions):
+    fields = [
+        "title",
+    ]
+
+
+@register(SoftSkill)
+class SoftSkillTranslationOption(TranslationOptions):
     fields = [
         "title",
     ]

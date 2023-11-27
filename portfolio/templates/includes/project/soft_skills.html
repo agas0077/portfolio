@@ -1,0 +1,16 @@
+{% load i18n %}
+{% load filters %}
+<aside class="skills aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Soft Skills</h2>
+        <div class="content">
+            <div class="skillset">
+                {% for skill in candidate.soft_skills.all|sort_by:'-percent' %}
+                    <div class="item d-flex justify-content-between">
+                        <h3 class="level-title">{{ skill.title }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</aside>

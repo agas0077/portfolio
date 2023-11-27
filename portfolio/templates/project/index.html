@@ -20,8 +20,11 @@
         {% endif %}
     </div>
     <div class="primary col-lg-4 col-12">
-        {% if candidate.skills.all|length > 0 %}
-            {% include "includes/project/skills.html" %}
+        {% if candidate.hard_skills.all|length > 0 %}
+            {% include "includes/project/hard_skills.html" %}
+        {% endif %}
+        {% if candidate.soft_skills.all|length > 0 %}
+            {% include "includes/project/soft_skills.html" %}
         {% endif %}
         {% if candidate.recomendations.all|length > 0 %}
             {% include "includes/project/recomendations.html" %}

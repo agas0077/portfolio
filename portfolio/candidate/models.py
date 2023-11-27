@@ -86,12 +86,6 @@ class Skill(models.Model):
         EXPERT = "Expert", _("Expert")
         PRO = "Pro", _("Pro")
 
-    candidate = models.ForeignKey(
-        Candidate,
-        verbose_name=_("Candidate"),
-        on_delete=models.CASCADE,
-        related_name="skills",
-    )
     title = models.CharField(_("Title"), max_length=200)
     level = models.CharField(_("Level"), max_length=100, choices=Level.choices)
     percent = models.PositiveSmallIntegerField(
@@ -101,9 +95,37 @@ class Skill(models.Model):
 
     class Meta:
         ordering = ("-percent",)
+        abstract = True
 
     def __str__(self):
         return self.title
+
+
+class HardSkill(Skill):
+    candidate = models.ForeignKey(
+        Candidate,
+        verbose_name=_("Candidate"),
+        on_delete=models.CASCADE,
+        related_name="hard_skills",
+    )
+
+    class Meta(Skill.Meta):
+        abstract = False
+
+
+class SoftSkill(Skill):
+    candidate = models.ForeignKey(
+        Candidate,
+        verbose_name=_("Candidate"),
+        on_delete=models.CASCADE,
+        related_name="soft_skills",
+    )
+    tooltip = models.CharField(
+        _("Tooltip"), max_length=200, blank=True, null=True
+    )
+
+    class Meta(Skill.Meta):
+        abstract = False
 
 
 class Education(models.Model):
