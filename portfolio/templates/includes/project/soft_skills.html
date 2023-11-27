@@ -4,9 +4,9 @@
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Soft Skills</h2>
         <div class="content">
-            <div class="skillset">
+            <div class="skillset d-flex flex-wrap">
                 {% for skill in candidate.soft_skills.all|sort_by:'-percent' %}
-                    <div class="item d-flex justify-content-between">
+                    <div class="item d-flex me-3 mb-1 justify-content-between">
                         <h3 class="level-title">{{ skill.title }}</h3>
                     </div>
                 {% endfor %}
