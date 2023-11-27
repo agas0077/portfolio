@@ -59,10 +59,9 @@ class Candidate(models.Model):
 
 
 class Job(models.Model):
-    candidate = models.ForeignKey(
+    candidate = models.ManyToManyField(
         Candidate,
         verbose_name=_("Candidate"),
-        on_delete=models.CASCADE,
         related_name="jobs",
     )
     title = models.CharField(_("Title"), max_length=200)
@@ -101,10 +100,9 @@ class HardSkill(Skill):
         EXPERT = "Expert", _("Expert")
         PRO = "Pro", _("Pro")
 
-    candidate = models.ForeignKey(
+    candidate = models.ManyToManyField(
         Candidate,
         verbose_name=_("Candidate"),
-        on_delete=models.CASCADE,
         related_name="hard_skills",
     )
     level = models.CharField(_("Level"), max_length=100, choices=Level.choices)
@@ -114,10 +112,9 @@ class HardSkill(Skill):
 
 
 class SoftSkill(Skill):
-    candidate = models.ForeignKey(
+    candidate = models.ManyToManyField(
         Candidate,
         verbose_name=_("Candidate"),
-        on_delete=models.CASCADE,
         related_name="soft_skills",
     )
 
@@ -126,10 +123,9 @@ class SoftSkill(Skill):
 
 
 class Education(models.Model):
-    candidate = models.ForeignKey(
+    candidate = models.ManyToManyField(
         Candidate,
         verbose_name=_("Candidate"),
-        on_delete=models.CASCADE,
         related_name="educations",
     )
     title = models.CharField(_("Title"), max_length=200)
@@ -152,10 +148,9 @@ class Language(models.Model):
         FOUR = "0123", _("Four stars")
         FIVE = "01234", _("Five stars")
 
-    candidate = models.ForeignKey(
+    candidate = models.ManyToManyField(
         Candidate,
         verbose_name=_("Candidate"),
-        on_delete=models.CASCADE,
         related_name="languages",
     )
     title = models.CharField(_("Title"), max_length=200)
@@ -167,10 +162,9 @@ class Language(models.Model):
 
 
 class Recomendation(models.Model):
-    candidate = models.ForeignKey(
+    candidate = models.ManyToManyField(
         Candidate,
         verbose_name=_("Candidate"),
-        on_delete=models.CASCADE,
         related_name="recomendations",
     )
     text = models.TextField(_("Text"))
@@ -184,10 +178,9 @@ class Recomendation(models.Model):
 
 
 class OtherProject(models.Model):
-    candidate = models.ForeignKey(
+    candidate = models.ManyToManyField(
         Candidate,
         verbose_name=_("Candidate"),
-        on_delete=models.CASCADE,
         related_name="other_projects",
     )
     title = models.CharField(_("Title"), max_length=200)
@@ -203,10 +196,9 @@ class OtherProject(models.Model):
 
 
 class Project(models.Model):
-    candidate = models.ForeignKey(
+    candidate = models.ManyToManyField(
         Candidate,
         verbose_name=_("Candidate"),
-        on_delete=models.CASCADE,
         related_name="projects",
     )
     image = models.ImageField(_("Preview"), upload_to="previews/")

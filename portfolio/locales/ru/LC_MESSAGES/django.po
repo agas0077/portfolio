@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-28 00:10+0300\n"
+"POT-Creation-Date: 2023-11-28 00:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\portfolio\candidate\admin.py:27
+msgid "-empty-"
+msgstr "-пусто-"
 
 #: .\portfolio\candidate\models.py:11
 msgid "Name"
@@ -68,8 +72,8 @@ msgstr "Ссылка на Telegram"
 msgid "Linkedin link"
 msgstr "Ссылка на Linkedin"
 
-#: .\portfolio\candidate\models.py:37 .\portfolio\candidate\models.py:195
-#: .\portfolio\candidate\models.py:216
+#: .\portfolio\candidate\models.py:37 .\portfolio\candidate\models.py:188
+#: .\portfolio\candidate\models.py:208
 msgid "Github link"
 msgstr "Ссылка на Github"
 
@@ -85,128 +89,128 @@ msgstr "Ссылка на Codeopen"
 msgid "Chosen candidate"
 msgstr "Выбранный кандидат"
 
-#: .\portfolio\candidate\models.py:64 .\portfolio\candidate\models.py:106
-#: .\portfolio\candidate\models.py:119 .\portfolio\candidate\models.py:131
-#: .\portfolio\candidate\models.py:157 .\portfolio\candidate\models.py:172
-#: .\portfolio\candidate\models.py:189 .\portfolio\candidate\models.py:208
-#: .\portfolio\candidate\models.py:234
+#: .\portfolio\candidate\models.py:64 .\portfolio\candidate\models.py:105
+#: .\portfolio\candidate\models.py:117 .\portfolio\candidate\models.py:128
+#: .\portfolio\candidate\models.py:153 .\portfolio\candidate\models.py:167
+#: .\portfolio\candidate\models.py:183 .\portfolio\candidate\models.py:201
+#: .\portfolio\candidate\models.py:226
 msgid "Candidate"
 msgstr "Кандидат"
 
-#: .\portfolio\candidate\models.py:68 .\portfolio\candidate\models.py:83
-#: .\portfolio\candidate\models.py:135 .\portfolio\candidate\models.py:161
-#: .\portfolio\candidate\models.py:193 .\portfolio\candidate\models.py:214
-#: .\portfolio\candidate\models.py:242
+#: .\portfolio\candidate\models.py:67 .\portfolio\candidate\models.py:82
+#: .\portfolio\candidate\models.py:131 .\portfolio\candidate\models.py:156
+#: .\portfolio\candidate\models.py:186 .\portfolio\candidate\models.py:206
+#: .\portfolio\candidate\models.py:234
 msgid "Title"
 msgstr "Название"
 
-#: .\portfolio\candidate\models.py:69 .\portfolio\candidate\models.py:194
-#: .\portfolio\candidate\models.py:215 .\portfolio\candidate\models.py:243
+#: .\portfolio\candidate\models.py:68 .\portfolio\candidate\models.py:187
+#: .\portfolio\candidate\models.py:207 .\portfolio\candidate\models.py:235
 msgid "Description"
 msgstr "Описание"
 
-#: .\portfolio\candidate\models.py:70
+#: .\portfolio\candidate\models.py:69
 msgid "Company name"
 msgstr "Название компании"
 
-#: .\portfolio\candidate\models.py:71
+#: .\portfolio\candidate\models.py:70
 msgid "Company's website url"
 msgstr "Ссылка на сайт компании"
 
-#: .\portfolio\candidate\models.py:72 .\portfolio\candidate\models.py:137
+#: .\portfolio\candidate\models.py:71 .\portfolio\candidate\models.py:133
 msgid "Date from"
 msgstr "Дата с"
 
-#: .\portfolio\candidate\models.py:73 .\portfolio\candidate\models.py:138
+#: .\portfolio\candidate\models.py:72 .\portfolio\candidate\models.py:134
 msgid "Date to"
 msgstr "Дата по"
 
-#: .\portfolio\candidate\models.py:85
+#: .\portfolio\candidate\models.py:84
 msgid "Percentage"
 msgstr "Степень"
 
-#: .\portfolio\candidate\models.py:99
+#: .\portfolio\candidate\models.py:98
 msgid "Good"
 msgstr "Хорошее владение"
 
-#: .\portfolio\candidate\models.py:100
+#: .\portfolio\candidate\models.py:99
 msgid "Advanced"
 msgstr "Продвинутое владение"
 
-#: .\portfolio\candidate\models.py:101
+#: .\portfolio\candidate\models.py:100
 msgid "Expert"
 msgstr "Экспертное владение"
 
-#: .\portfolio\candidate\models.py:102
+#: .\portfolio\candidate\models.py:101
 msgid "Pro"
 msgstr "Профессиональное владение"
 
-#: .\portfolio\candidate\models.py:110 .\portfolio\candidate\models.py:162
+#: .\portfolio\candidate\models.py:108 .\portfolio\candidate\models.py:157
 msgid "Level"
 msgstr "Уровень"
 
-#: .\portfolio\candidate\models.py:136
+#: .\portfolio\candidate\models.py:132
 msgid "Institution name"
 msgstr "Название заведения"
 
-#: .\portfolio\candidate\models.py:140
+#: .\portfolio\candidate\models.py:136
 #: .\portfolio\templates\includes\pdf_modal.html:13
 msgid "Certificate"
 msgstr "Сертификат"
 
-#: .\portfolio\candidate\models.py:149
+#: .\portfolio\candidate\models.py:145
 msgid "One star"
 msgstr "Одна звезда"
 
-#: .\portfolio\candidate\models.py:150
+#: .\portfolio\candidate\models.py:146
 msgid "Two stars"
 msgstr "Две звезды"
 
-#: .\portfolio\candidate\models.py:151
+#: .\portfolio\candidate\models.py:147
 msgid "Three stars"
 msgstr "Три звезды"
 
-#: .\portfolio\candidate\models.py:152
+#: .\portfolio\candidate\models.py:148
 msgid "Four stars"
 msgstr "Четыре звезды"
 
-#: .\portfolio\candidate\models.py:153
+#: .\portfolio\candidate\models.py:149
 msgid "Five stars"
 msgstr "Пять звезд"
 
-#: .\portfolio\candidate\models.py:163
+#: .\portfolio\candidate\models.py:158
 msgid "Extent"
 msgstr "Степень"
 
-#: .\portfolio\candidate\models.py:176
+#: .\portfolio\candidate\models.py:170
 msgid "Text"
 msgstr "Текст"
 
-#: .\portfolio\candidate\models.py:177
+#: .\portfolio\candidate\models.py:171
 msgid "Author"
 msgstr "Автор"
 
-#: .\portfolio\candidate\models.py:179
+#: .\portfolio\candidate\models.py:173
 msgid "Author's job title"
 msgstr "Должность автора"
 
-#: .\portfolio\candidate\models.py:196 .\portfolio\candidate\models.py:217
+#: .\portfolio\candidate\models.py:189 .\portfolio\candidate\models.py:209
 msgid "Project end date"
 msgstr "Дата завершения проекта"
 
-#: .\portfolio\candidate\models.py:212
+#: .\portfolio\candidate\models.py:204
 msgid "Preview"
 msgstr "Превью"
 
-#: .\portfolio\candidate\models.py:213
+#: .\portfolio\candidate\models.py:205
 msgid "Link"
 msgstr "Ссылка"
 
-#: .\portfolio\candidate\models.py:239
+#: .\portfolio\candidate\models.py:231
 msgid "File"
 msgstr "Файл"
 
-#: .\portfolio\candidate\models.py:244
+#: .\portfolio\candidate\models.py:236
 #, fuzzy
 #| msgid "Candidate"
 msgid "Change date"
