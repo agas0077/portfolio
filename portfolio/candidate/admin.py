@@ -13,8 +13,10 @@ from candidate.models import (
     Project,
     Recomendation,
     SoftSkill,
+    Stack,
 )
 from django.contrib import admin
+from django.contrib.admin.widgets import AdminTextareaWidget
 from django.contrib.auth.models import Group
 from django.http.request import HttpRequest
 from django.utils.translation import gettext_lazy as _
@@ -64,9 +66,10 @@ class OtherProjectAdmin(TranslationAdmin):
 
 
 @admin.register(Project)
-class ProjectAdmin(BaseTranslationAdmin):
+class ProjectAdmin(TranslationAdmin):
     list_display = [
         "title",
+        "finish_date",
     ]
 
 
@@ -92,6 +95,11 @@ class EducationAdmin(BaseTranslationAdmin):
 
 @admin.register(Recomendation)
 class RecomendationAdmin(BaseTranslationAdmin):
+    pass
+
+
+@admin.register(Stack)
+class StackAdmin(BaseTranslationAdmin):
     pass
 
 

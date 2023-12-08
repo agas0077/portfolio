@@ -1,5 +1,5 @@
 # Standard Library
-from email.policy import default
+import re
 
 # Third Party Library
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -208,9 +208,20 @@ class Project(models.Model):
     image = models.ImageField(_("Preview"), upload_to="previews/")
     online_link = models.URLField(_("Link"))
     title = models.CharField(_("Title"), max_length=200)
-    description = models.TextField(_("Description"))
+    description = models.TextField(
+        _("Description"),
+        help_text=_(
+            "General description in one sentence, key goal, "
+            "what you've implemented in the project. 3-4 santances"
+        ),
+    )
     github_link = models.URLField(_("Github link"))
     finish_date = models.DateField(_("Project end date"))
+    stack = models.ManyToManyField(
+        "Stack",
+        verbose_name=_("Stack"),
+        related_name="projects",
+    )
 
     class Meta:
         ordering = ("-finish_date",)
@@ -243,4 +254,11 @@ class File(models.Model):
         ordering = ("-change_date",)
 
     def __str__(self):
+        return self.title
+
+
+class Stack(models.Model):
+    title = models.CharField(_("Title"), max_length=30, unique=True)
+
+    def __str__(self) -> str:
         return self.title

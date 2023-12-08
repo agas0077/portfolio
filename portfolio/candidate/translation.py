@@ -10,6 +10,7 @@ from candidate.models import (
     Project,
     Recomendation,
     SoftSkill,
+    Stack,
 )
 from modeltranslation.translator import register, TranslationOptions
 
@@ -84,4 +85,11 @@ class ProjectTranslationOption(TranslationOptions):
     fields = [
         "title",
         "description",
+    ]
+
+
+@register(Stack)
+class StackTranslationOption(TranslationOptions):
+    fields = [
+        "title",
     ]
