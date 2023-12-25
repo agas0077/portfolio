@@ -4,7 +4,7 @@ import re
 # Third Party Library
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from django.db.models import Q
+from django.db.models import F, Q
 from django.utils.translation import gettext_lazy as _
 
 
@@ -76,7 +76,7 @@ class Job(models.Model):
     date_to = models.DateField(_("Date to"), blank=True, null=True)
 
     class Meta:
-        ordering = ("-date_from",)
+        ordering = [F("date_to").desc(nulls_first=True), "-date_from"]
 
     def __str__(self):
         return self.title
