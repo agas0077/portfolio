@@ -1,6 +1,8 @@
 # Standard Library
 from collections.abc import Sequence
 
+from django.template.response import TemplateResponse
+
 # Third Party Library
 from candidate.models import (
     Candidate,
@@ -14,15 +16,36 @@ from candidate.models import (
     Recomendation,
     SoftSkill,
     Stack,
+    Ip,
 )
 from django.contrib import admin
-from django.contrib.admin.widgets import AdminTextareaWidget
-from django.contrib.auth.models import Group
+from django.contrib.admin.sites import AdminSite
+from django.contrib.auth import get_user_model
+from django.contrib.auth.admin import UserAdmin
 from django.http.request import HttpRequest
 from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TranslationAdmin
 
-# Register your models here.
+from candidate.services import (
+    count_chosen_candidate_ips,
+    count_chosen_candidate_unique_ips,
+    count_ips,
+    count_unique_ips,
+)
+
+User = get_user_model()
+
+
+class CustomAdminSite(AdminSite):
+    def index(self, request, extra_context=None):
+        if extra_context is None:
+            extra_context = {}
+        extra_context["unique_ips_count"] = count_unique_ips()
+        extra_context["total_ips_count"] = count_ips()
+        return super().index(request, extra_context)
+
+
+custom_admin_site = CustomAdminSite("custom_admin_site")
 
 
 class BaseTranslationAdmin(TranslationAdmin):
@@ -37,20 +60,30 @@ class BaseTranslationAdmin(TranslationAdmin):
         ]
 
 
-@admin.register(Candidate)
 class CandidateAdmin(TranslationAdmin):
     list_display = [
         "title",
         "is_chosen_candidate",
+        "views_count",
+        "views_count_unique",
     ]
 
+    def views_count_unique(self, obj):
+        result = count_chosen_candidate_unique_ips(obj)
+        return result
 
-@admin.register(File)
+    def views_count(self, obj):
+        result = count_chosen_candidate_ips(obj)
+        return result
+
+    views_count_unique.short_description = _("Unique views count")
+    views_count.short_description = _("Views count")
+
+
 class FileAdmin(admin.ModelAdmin):
     list_display = [field.name for field in File._meta.get_fields()]
 
 
-@admin.register(Job)
 class JobAdmin(TranslationAdmin):
     list_display = [
         "title",
@@ -58,14 +91,12 @@ class JobAdmin(TranslationAdmin):
     ]
 
 
-@admin.register(OtherProject)
 class OtherProjectAdmin(TranslationAdmin):
     list_display = [
         "title",
     ]
 
 
-@admin.register(Project)
 class ProjectAdmin(TranslationAdmin):
     list_display = [
         "title",
@@ -73,34 +104,48 @@ class ProjectAdmin(TranslationAdmin):
     ]
 
 
-@admin.register(Language)
 class LanguageAdmin(BaseTranslationAdmin):
     pass
 
 
-@admin.register(HardSkill)
 class HardSkillAdmin(BaseTranslationAdmin):
     pass
 
 
-@admin.register(SoftSkill)
 class SoftSkillAdmin(BaseTranslationAdmin):
     pass
 
 
-@admin.register(Education)
 class EducationAdmin(BaseTranslationAdmin):
     pass
 
 
-@admin.register(Recomendation)
 class RecomendationAdmin(BaseTranslationAdmin):
     pass
 
 
-@admin.register(Stack)
 class StackAdmin(BaseTranslationAdmin):
     pass
 
 
-admin.site.unregister(Group)
+class IpAdmin(admin.ModelAdmin):
+    list_display = [
+        "ip",
+        "view_datetime",
+        "candidate",
+    ]
+
+
+custom_admin_site.register(Candidate, CandidateAdmin)
+custom_admin_site.register(Education, EducationAdmin)
+custom_admin_site.register(File, FileAdmin)
+custom_admin_site.register(HardSkill, HardSkillAdmin)
+custom_admin_site.register(Job, JobAdmin)
+custom_admin_site.register(Language, LanguageAdmin)
+custom_admin_site.register(OtherProject, OtherProjectAdmin)
+custom_admin_site.register(Project, ProjectAdmin)
+custom_admin_site.register(Recomendation, RecomendationAdmin)
+custom_admin_site.register(SoftSkill, SoftSkillAdmin)
+custom_admin_site.register(Stack, StackAdmin)
+custom_admin_site.register(Ip, IpAdmin)
+custom_admin_site.register(User, UserAdmin)

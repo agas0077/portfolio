@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-26 16:07+0300\n"
+"POT-Creation-Date: 2024-01-26 20:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,9 +20,17 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\candidate\admin.py:29
+#: .\candidate\admin.py:52
 msgid "-empty-"
 msgstr "-пусто-"
+
+#: .\candidate\admin.py:79
+msgid "Unique views count"
+msgstr "Счетчик уникальных просмотров"
+
+#: .\candidate\admin.py:80
+msgid "Views count"
+msgstr "Счетчик просмотров"
 
 #: .\candidate\models.py:15
 msgid "In active search"
@@ -120,7 +128,7 @@ msgstr "Выбранный кандидат"
 #: .\candidate\models.py:136 .\candidate\models.py:147
 #: .\candidate\models.py:172 .\candidate\models.py:186
 #: .\candidate\models.py:202 .\candidate\models.py:220
-#: .\candidate\models.py:256
+#: .\candidate\models.py:256 .\candidate\models.py:287
 msgid "Candidate"
 msgstr "Кандидат"
 
@@ -245,6 +253,10 @@ msgstr "Файл"
 msgid "Change date"
 msgstr "Дата изменения"
 
+#: .\candidate\models.py:284
+msgid "View datetime"
+msgstr "Дата и время посещения"
+
 #: .\portfolio\settings.py:147
 msgid "Russian"
 msgstr "Русский"
@@ -252,6 +264,34 @@ msgstr "Русский"
 #: .\portfolio\settings.py:148
 msgid "English"
 msgstr "Английский"
+
+#: .\templates\admin\index.html:17
+msgid "Visits counter"
+msgstr "Счетчик посещений"
+
+#: .\templates\admin\index.html:20
+msgid "Unique site views"
+msgstr "Уникальные посещения сайта"
+
+#: .\templates\admin\index.html:21
+msgid "Total site views"
+msgstr "Всего посещений сайта"
+
+#: .\templates\admin\index.html:26
+msgid "Recent actions"
+msgstr "Недавние действия"
+
+#: .\templates\admin\index.html:27
+msgid "My actions"
+msgstr "Мои действия"
+
+#: .\templates\admin\index.html:31
+msgid "None available"
+msgstr "Недоступно"
+
+#: .\templates\admin\index.html:49
+msgid "Unknown content"
+msgstr "Неизвестное содержимое"
 
 #: .\templates\base.html:6
 msgid "Protfolio"

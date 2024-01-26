@@ -1,17 +1,20 @@
-# Standard Library
-from typing import Any
-
 # Third Party Library
-from candidate.models import Candidate
-from candidate.services import get_candidate, get_education_certificate_url
+from candidate.services import (
+    get_candidate,
+    get_education_certificate_url,
+    get_client_ip,
+)
 from django.http import JsonResponse
 from django.shortcuts import render
-from django.views.generic import ListView
+from candidate.models import Ip
 
 # Create your views here.
 
 
 def index(request):
+    ip = get_client_ip(request)
+    Ip.objects.create(ip=ip, candidate=get_candidate())
+
     context = {
         "candidate": get_candidate,
     }

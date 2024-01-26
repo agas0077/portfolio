@@ -277,3 +277,18 @@ class Stack(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class Ip(models.Model):
+    ip = models.GenericIPAddressField("IP")
+    view_datetime = models.DateTimeField(_("View datetime"), auto_now_add=True)
+    candidate = models.ForeignKey(
+        Candidate,
+        verbose_name=_("Candidate"),
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="ips",
+    )
+
+    def __str__(self):
+        return self.ip

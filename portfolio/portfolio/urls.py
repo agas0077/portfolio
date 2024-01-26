@@ -4,9 +4,10 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from candidate.admin import custom_admin_site
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("admin/", custom_admin_site.urls),
 ] + i18n_patterns(
     path("i18n/", include("django.conf.urls.i18n")),
     path("", include("candidate.urls", namespace="project")),
