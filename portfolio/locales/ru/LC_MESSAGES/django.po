@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-26 14:57+0300\n"
+"POT-Creation-Date: 2024-01-26 16:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,10 +64,8 @@ msgid "Ready for remote job"
 msgstr "Готов к удаленной работе"
 
 #: .\candidate\models.py:34 .\templates\includes\header.html:19
-#, fuzzy
-#| msgid "Ready for remote job"
 msgid "Ready to relocate"
-msgstr "Готов к удаленной работе"
+msgstr "Готов к переезду"
 
 #: .\candidate\models.py:37
 msgid "Job search status"
@@ -244,10 +242,8 @@ msgid "File"
 msgstr "Файл"
 
 #: .\candidate\models.py:266
-#, fuzzy
-#| msgid "Candidate"
 msgid "Change date"
-msgstr "Кандидат"
+msgstr "Дата изменения"
 
 #: .\portfolio\settings.py:147
 msgid "Russian"
@@ -266,16 +262,14 @@ msgid "Not ready to relocate"
 msgstr "Не готов к переезду"
 
 #: .\templates\includes\header.html:26
-#, fuzzy
-#| msgid "Ready for remote job"
 msgid "Not ready for remote job"
 msgstr "Готов к удаленной работе"
 
-#: .\templates\includes\header.html:62
+#: .\templates\includes\header.html:63
 msgid "Dark Mode"
 msgstr "Темный режим"
 
-#: .\templates\includes\header.html:82
+#: .\templates\includes\header.html:83
 msgid "Contact me"
 msgstr "Связаться со мной"
 
