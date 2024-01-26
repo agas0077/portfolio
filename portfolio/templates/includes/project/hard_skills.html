@@ -4,7 +4,7 @@
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Hard Skills</h2>
         <div class="content">
-            <p class="intro">{{ candidate.about_skills }}</p>
+            {% if candidate.about_skills != None %}<p class="intro">{{ candidate.about_skills }}</p>{% endif %}
             <div class="skillset">
                 {% for skill in candidate.hard_skills.all|sort_by:'-percent' %}
                     <div class="item">

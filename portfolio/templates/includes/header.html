@@ -3,48 +3,62 @@
 {% load thumbnail %}
 <header class="header">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col">
-                {% thumbnail candidate.image "180x180" crop="center" upscale=False quality=100 as im %}
-                    <img class="profile-image img-fluid float-start rounded-circle" src={{ im.url }} alt="profile image" />
-                {% endthumbnail %}
-                <div class="profile-content">
-                    <h1 class="name">{{ candidate.name }} {{ candidate.surname }}</h1>
-                    <h2 class="desc">{{ candidate.search_job_title }}</h2>
-                    <ul class="social list-inline">
-                        {% if candidate.telegram %}
-                            <li class="list-inline-item">
-                                <a href={{ candidate.telegram }} target="_blank"><i class="fab fa-telegram"></i></a>
-                            </li>
-                        {% endif %}
-                        {% if candidate.linkedin %}
-                            <li class="list-inline-item">
-                                <a href={{ candidate.linkedin }} target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                        {% endif %}
-                        {% if candidate.github %}
-                            <li class="list-inline-item">
-                                <a href={{ candidate.github }} target="_blank"><i class="fab fa-github-alt"></i></a>
-                            </li>
-                        {% endif %}
-                        {% if candidate.stack_overflow %}
-                            <li class="list-inline-item">
-                                <a href={{ candidate.stack_overflow }} target="_blank"><i class="fab fa-stack-overflow"></i></a>
-                            </li>
-                        {% endif %}
-                        {% if candidate.codeopen %}
-                            <li class="list-inline-item last-item">
-                                <a href={{ candidate.codeopen }} target="_blank"><i class="fab fa-codepen"></i></a>
-                            </li>
-                        {% endif %}
-                    </ul>
+        <div class="row align-items-center justify-content-between">
+            <div class="col     ">
+                <div class="col-12 col-lg-auto">
+                    {% thumbnail candidate.image "180x180" crop="center" upscale=False quality=100 as im %}
+                        <img class="profile-image img-fluid float-start rounded-circle" src={{ im.url }} alt="profile image" />
+                    {% endthumbnail %}
                 </div>
-                <!--//profile-->
+                <div class="col-12 col-lg-auto">
+                    <div class="profile-content">
+                        <h1 class="name">{{ candidate.name }} {{ candidate.surname }}</h1>
+                        <h2 class="desc">{{ candidate.search_job_title }} - {{ candidate.get_job_search_status_display }}</h2>
+                        <ul class="list-unstyled">
+                            {% if candidate.ready_to_relocate %}
+                                <li>{% trans "Ready to relocate" %}</li>
+                            {% else %}
+                                <li>{% trans "Not ready to relocate" %}</li>
+                            {% endif %}
+                            {% if candidate.distant_work %}
+                                <li>{% trans "Ready for remote job" %}</li>
+                            {% else %}
+                                <li>{% trans "Not ready for remote job" %}</li>
+                            {% endif %}
+                        </ul>
+                        <ul class="social list-inline">
+                            {% if candidate.telegram %}
+                                <li class="list-inline-item">
+                                    <a href={{ candidate.telegram }} target="_blank"><i class="fab fa-telegram"></i></a>
+                                </li>
+                            {% endif %}
+                            {% if candidate.linkedin %}
+                                <li class="list-inline-item">
+                                    <a href={{ candidate.linkedin }} target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                            {% endif %}
+                            {% if candidate.github %}
+                                <li class="list-inline-item">
+                                    <a href={{ candidate.github }} target="_blank"><i class="fab fa-github-alt"></i></a>
+                                </li>
+                            {% endif %}
+                            {% if candidate.stack_overflow %}
+                                <li class="list-inline-item">
+                                    <a href={{ candidate.stack_overflow }} target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                                </li>
+                            {% endif %}
+                            {% if candidate.codeopen %}
+                                <li class="list-inline-item last-item">
+                                    <a href={{ candidate.codeopen }} target="_blank"><i class="fab fa-codepen"></i></a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <!--//col-->
-            <div class="col-12 col-md-auto">
+            <div class="col-12 col-lg-auto">
                 <div class="dark-mode-switch d-flex">
-                    <div class="form-check form-switch mx-auto mx-md-0">
+                    <div class="form-check form-switch mx-auto mx-lg-0">
                         <input type="checkbox" class="form-check-input me-2" id="darkSwitch" />
                         <label class="custom-control-label" for="darkSwitch">{% trans "Dark Mode" %}</label>
                     </div>

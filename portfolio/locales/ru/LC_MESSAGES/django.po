@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 23:15+0300\n"
+"POT-Creation-Date: 2024-01-26 14:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,302 +16,332 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: portfolio/candidate/admin.py:29
+#: .\candidate\admin.py:29
 msgid "-empty-"
 msgstr "-пусто-"
 
-#: portfolio/candidate/models.py:14 portfolio/candidate/models.py:71
-#: portfolio/candidate/models.py:86 portfolio/candidate/models.py:135
-#: portfolio/candidate/models.py:160 portfolio/candidate/models.py:190
-#: portfolio/candidate/models.py:210 portfolio/candidate/models.py:249
-#: portfolio/candidate/models.py:261
+#: .\candidate\models.py:15
+msgid "In active search"
+msgstr "В активном поиске"
+
+#: .\candidate\models.py:16
+msgid "Open to opportunities"
+msgstr "Открыт к предложениям"
+
+#: .\candidate\models.py:17
+msgid "Not looking for a job"
+msgstr "Не ищу работу"
+
+#: .\candidate\models.py:19 .\candidate\models.py:86 .\candidate\models.py:101
+#: .\candidate\models.py:150 .\candidate\models.py:175
+#: .\candidate\models.py:205 .\candidate\models.py:225
+#: .\candidate\models.py:264 .\candidate\models.py:276
 msgid "Title"
 msgstr "Название"
 
-#: portfolio/candidate/models.py:15
+#: .\candidate\models.py:20
 msgid "Name"
 msgstr "Имя"
 
-#: portfolio/candidate/models.py:16
+#: .\candidate\models.py:21
 msgid "Surname"
 msgstr "Фамилия"
 
-#: portfolio/candidate/models.py:18
+#: .\candidate\models.py:23
 msgid "Image"
 msgstr "Изображение"
 
-#: portfolio/candidate/models.py:21
+#: .\candidate\models.py:26
 msgid "What job the candidate wants to find"
 msgstr "Какую работу кандидат хочет найти"
 
-#: portfolio/candidate/models.py:27
+#: .\candidate\models.py:32 .\templates\includes\header.html:24
 msgid "Ready for remote job"
 msgstr "Готов к удаленной работе"
 
-#: portfolio/candidate/models.py:29
+#: .\candidate\models.py:34 .\templates\includes\header.html:19
+#, fuzzy
+#| msgid "Ready for remote job"
+msgid "Ready to relocate"
+msgstr "Готов к удаленной работе"
+
+#: .\candidate\models.py:37
+msgid "Job search status"
+msgstr "Статус поиска работы"
+
+#: .\candidate\models.py:44
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: portfolio/candidate/models.py:31
+#: .\candidate\models.py:46
 msgid "City"
 msgstr "Город"
 
-#: portfolio/candidate/models.py:33
+#: .\candidate\models.py:48
 msgid "Country"
 msgstr "Страна"
 
-#: portfolio/candidate/models.py:35
+#: .\candidate\models.py:50
 msgid "About candidate"
 msgstr "О кандидате"
 
-#: portfolio/candidate/models.py:37
+#: .\candidate\models.py:52
 msgid "About candidate's skills"
 msgstr "О навыках кандидата"
 
-#: portfolio/candidate/models.py:39
+#: .\candidate\models.py:54
 msgid "Telegram link"
 msgstr "Ссылка на Telegram"
 
-#: portfolio/candidate/models.py:40
+#: .\candidate\models.py:55
 msgid "Linkedin link"
 msgstr "Ссылка на Linkedin"
 
-#: portfolio/candidate/models.py:41 portfolio/candidate/models.py:192
-#: portfolio/candidate/models.py:218
+#: .\candidate\models.py:56 .\candidate\models.py:207
+#: .\candidate\models.py:233
 msgid "Github link"
 msgstr "Ссылка на Github"
 
-#: portfolio/candidate/models.py:43
+#: .\candidate\models.py:58
 msgid "Stack Overflow link"
 msgstr "Ссылка на Stack Overflow"
 
-#: portfolio/candidate/models.py:45
+#: .\candidate\models.py:60
 msgid "Codeopen link"
 msgstr "Ссылка на Codeopen"
 
-#: portfolio/candidate/models.py:48
+#: .\candidate\models.py:63
 msgid "Chosen candidate"
 msgstr "Выбранный кандидат"
 
-#: portfolio/candidate/models.py:68 portfolio/candidate/models.py:109
-#: portfolio/candidate/models.py:121 portfolio/candidate/models.py:132
-#: portfolio/candidate/models.py:157 portfolio/candidate/models.py:171
-#: portfolio/candidate/models.py:187 portfolio/candidate/models.py:205
-#: portfolio/candidate/models.py:241
+#: .\candidate\models.py:83 .\candidate\models.py:124
+#: .\candidate\models.py:136 .\candidate\models.py:147
+#: .\candidate\models.py:172 .\candidate\models.py:186
+#: .\candidate\models.py:202 .\candidate\models.py:220
+#: .\candidate\models.py:256
 msgid "Candidate"
 msgstr "Кандидат"
 
-#: portfolio/candidate/models.py:72 portfolio/candidate/models.py:191
-#: portfolio/candidate/models.py:212 portfolio/candidate/models.py:250
+#: .\candidate\models.py:87 .\candidate\models.py:206
+#: .\candidate\models.py:227 .\candidate\models.py:265
 msgid "Description"
 msgstr "Описание"
 
-#: portfolio/candidate/models.py:73
+#: .\candidate\models.py:88
 msgid "Company name"
 msgstr "Название компании"
 
-#: portfolio/candidate/models.py:74
+#: .\candidate\models.py:89
 msgid "Company's website url"
 msgstr "Ссылка на сайт компании"
 
-#: portfolio/candidate/models.py:75 portfolio/candidate/models.py:137
+#: .\candidate\models.py:90 .\candidate\models.py:152
 msgid "Date from"
 msgstr "Дата с"
 
-#: portfolio/candidate/models.py:76 portfolio/candidate/models.py:138
+#: .\candidate\models.py:91 .\candidate\models.py:153
 msgid "Date to"
 msgstr "Дата по"
 
-#: portfolio/candidate/models.py:88
+#: .\candidate\models.py:103
 msgid "Percentage"
 msgstr "Степень"
 
-#: portfolio/candidate/models.py:102
+#: .\candidate\models.py:117
 msgid "Good"
 msgstr "Хорошее владение"
 
-#: portfolio/candidate/models.py:103
+#: .\candidate\models.py:118
 msgid "Advanced"
 msgstr "Продвинутое владение"
 
-#: portfolio/candidate/models.py:104
+#: .\candidate\models.py:119
 msgid "Expert"
 msgstr "Экспертное владение"
 
-#: portfolio/candidate/models.py:105
+#: .\candidate\models.py:120
 msgid "Pro"
 msgstr "Профессиональное владение"
 
-#: portfolio/candidate/models.py:112 portfolio/candidate/models.py:161
+#: .\candidate\models.py:127 .\candidate\models.py:176
 msgid "Level"
 msgstr "Уровень"
 
-#: portfolio/candidate/models.py:136
+#: .\candidate\models.py:151
 msgid "Institution name"
 msgstr "Название заведения"
 
-#: portfolio/candidate/models.py:140
-#: portfolio/templates/includes/pdf_modal.html:13
+#: .\candidate\models.py:155 .\templates\includes\pdf_modal.html:13
 msgid "Certificate"
 msgstr "Сертификат"
 
-#: portfolio/candidate/models.py:149
+#: .\candidate\models.py:164
 msgid "One star"
 msgstr "Одна звезда"
 
-#: portfolio/candidate/models.py:150
+#: .\candidate\models.py:165
 msgid "Two stars"
 msgstr "Две звезды"
 
-#: portfolio/candidate/models.py:151
+#: .\candidate\models.py:166
 msgid "Three stars"
 msgstr "Три звезды"
 
-#: portfolio/candidate/models.py:152
+#: .\candidate\models.py:167
 msgid "Four stars"
 msgstr "Четыре звезды"
 
-#: portfolio/candidate/models.py:153
+#: .\candidate\models.py:168
 msgid "Five stars"
 msgstr "Пять звезд"
 
-#: portfolio/candidate/models.py:162
+#: .\candidate\models.py:177
 msgid "Extent"
 msgstr "Степень"
 
-#: portfolio/candidate/models.py:174
+#: .\candidate\models.py:189
 msgid "Text"
 msgstr "Текст"
 
-#: portfolio/candidate/models.py:175
+#: .\candidate\models.py:190
 msgid "Author"
 msgstr "Автор"
 
-#: portfolio/candidate/models.py:177
+#: .\candidate\models.py:192
 msgid "Author's job title"
 msgstr "Должность автора"
 
-#: portfolio/candidate/models.py:193 portfolio/candidate/models.py:219
+#: .\candidate\models.py:208 .\candidate\models.py:234
 msgid "Project end date"
 msgstr "Дата завершения проекта"
 
-#: portfolio/candidate/models.py:208
+#: .\candidate\models.py:223
 msgid "Preview"
 msgstr "Превью"
 
-#: portfolio/candidate/models.py:209
+#: .\candidate\models.py:224
 msgid "Link"
 msgstr "Ссылка"
 
-#: portfolio/candidate/models.py:214
+#: .\candidate\models.py:229
 msgid ""
 "General description in one sentence, key goal, what you've implemented in "
 "the project. 3-4 santances"
 msgstr ""
-"Общее описание в одном предложении, ключевая цель, что было реализовано кандидатом "
-"в проекте. 3-4 предложения"
+"Общее описание в одном предложении, ключевая цель, что было реализовано "
+"кандидатом в проекте. 3-4 предложения"
 
-#: portfolio/candidate/models.py:222
+#: .\candidate\models.py:237
 msgid "Stack"
 msgstr "Стек"
 
-#: portfolio/candidate/models.py:246
+#: .\candidate\models.py:261
 msgid "File"
 msgstr "Файл"
 
-#: portfolio/candidate/models.py:251
+#: .\candidate\models.py:266
 #, fuzzy
 #| msgid "Candidate"
 msgid "Change date"
 msgstr "Кандидат"
 
-#: portfolio/portfolio/settings.py:147
+#: .\portfolio\settings.py:147
 msgid "Russian"
 msgstr "Русский"
 
-#: portfolio/portfolio/settings.py:148
+#: .\portfolio\settings.py:148
 msgid "English"
 msgstr "Английский"
 
-#: portfolio/templates/base.html:6
+#: .\templates\base.html:6
 msgid "Protfolio"
 msgstr "Портфолио"
 
-#: portfolio/templates/includes/header.html:49
+#: .\templates\includes\header.html:21
+msgid "Not ready to relocate"
+msgstr "Не готов к переезду"
+
+#: .\templates\includes\header.html:26
+#, fuzzy
+#| msgid "Ready for remote job"
+msgid "Not ready for remote job"
+msgstr "Готов к удаленной работе"
+
+#: .\templates\includes\header.html:62
 msgid "Dark Mode"
 msgstr "Темный режим"
 
-#: portfolio/templates/includes/header.html:69
+#: .\templates\includes\header.html:82
 msgid "Contact me"
 msgstr "Связаться со мной"
 
-#: portfolio/templates/includes/load_more_button.html:3
+#: .\templates\includes\load_more_button.html:3
 msgid "Load More"
 msgstr "Загрузить еще"
 
-#: portfolio/templates/includes/project/about.html:4
+#: .\templates\includes\project\about.html:4
 msgid "About Me"
 msgstr "Обо мне"
 
-#: portfolio/templates/includes/project/contacts.html:4
+#: .\templates\includes\project\contacts.html:4
 msgid "Basic Information"
 msgstr "Общая информация"
 
-#: portfolio/templates/includes/project/contacts.html:9
+#: .\templates\includes\project\contacts.html:9
 msgid "Location:"
 msgstr "Местоположение:"
 
-#: portfolio/templates/includes/project/education.html:5
+#: .\templates\includes\project\education.html:5
 msgid "Education"
 msgstr "Образование"
 
-#: portfolio/templates/includes/project/education.html:20
+#: .\templates\includes\project\education.html:20
 msgid "Cert"
 msgstr "Серт"
 
-#: portfolio/templates/includes/project/languages.html:4
+#: .\templates\includes\project\languages.html:4
 msgid "Languages"
 msgstr "Языки"
 
-#: portfolio/templates/includes/project/other_project_list.html:4
+#: .\templates\includes\project\other_project_list.html:4
 msgid "Other Projects"
 msgstr "Другие проекты"
 
-#: portfolio/templates/includes/project/other_project_list.html:15
+#: .\templates\includes\project\other_project_list.html:15
 msgid "View on GitHub"
 msgstr "Смотреть на GitHub"
 
-#: portfolio/templates/includes/project/project_list.html:6
+#: .\templates\includes\project\project_list.html:6
 msgid "Latest Projects"
 msgstr "Последние проекты"
 
-#: portfolio/templates/includes/project/project_list.html:18
+#: .\templates\includes\project\project_list.html:18
 msgid "New"
 msgstr "Свежее"
 
-#: portfolio/templates/includes/project/project_list.html:36
-#: portfolio/templates/includes/project/project_list.html:68
+#: .\templates\includes\project\project_list.html:36
+#: .\templates\includes\project\project_list.html:68
 msgid "Source code"
 msgstr "Исходный код"
 
-#: portfolio/templates/includes/project/project_list.html:40
-#: portfolio/templates/includes/project/project_list.html:72
+#: .\templates\includes\project\project_list.html:40
+#: .\templates\includes\project\project_list.html:72
 msgid "View online"
 msgstr "Смотреть онлайн"
 
-#: portfolio/templates/includes/project/recomendations.html:4
+#: .\templates\includes\project\recomendations.html:4
 msgid "Testimonials"
 msgstr "Рекомендации"
 
-#: portfolio/templates/includes/project/work_experience.html:4
+#: .\templates\includes\project\work_experience.html:4
 msgid "Work Experience"
 msgstr "Опыт"
 
-#: portfolio/templates/includes/project/work_experience.html:17
+#: .\templates\includes\project\work_experience.html:17
 msgid "Present"
 msgstr "н.в."
 

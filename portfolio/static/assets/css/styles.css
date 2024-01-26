@@ -800,7 +800,8 @@ body[data-theme="dark"] .text-muted {
   color: rgba(255, 255, 255, 0.6);
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 992px) {
+/* @media (max-width: 767.98px) { */
   .header {
     text-align: center;
   }
@@ -813,7 +814,7 @@ body[data-theme="dark"] .text-muted {
     text-align: center;
   }
   .header .btn {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     float: none !important;
   }
   .project-image {

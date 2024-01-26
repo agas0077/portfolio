@@ -11,6 +11,11 @@ from django.utils.translation import gettext_lazy as _
 class Candidate(models.Model):
     """Модель пользователя."""
 
+    class SearchStatus(models.TextChoices):
+        ACTIVE = "Active", _("In active search")
+        ADVANCED = "Passive", _("Open to opportunities")
+        INACTIVE = "Inactive", _("Not looking for a job")
+
     title = models.CharField(_("Title"), max_length=200, default="candidate")
     name = models.CharField(_("Name"), max_length=200)
     surname = models.CharField(_("Surname"), max_length=200)
@@ -25,6 +30,16 @@ class Candidate(models.Model):
     )
     email = models.EmailField("Email", max_length=254, unique=True)
     distant_work = models.BooleanField(_("Ready for remote job"), default=True)
+    ready_to_relocate = models.BooleanField(
+        _("Ready to relocate"), default=False
+    )
+    job_search_status = models.CharField(
+        _("Job search status"),
+        max_length=100,
+        choices=SearchStatus.choices,
+        default=SearchStatus.ACTIVE,
+    )
+
     phone_num = models.CharField(
         _("Phone number"), max_length=12, blank=True, null=True
     )
